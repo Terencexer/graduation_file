@@ -55,5 +55,11 @@ namespace DtCms.Web.Aspx
                 Response.Write("<script>alert('登录失败,会员名或密码输入错误！');</script>");
             }
         }
+        protected void ButtonRegister_Click(object sender, EventArgs e)
+        {
+            txtUserName.Text = "";
+            txtpwd.Text = "";
+            txtCode.Text = "";
+        }
     }
 }

@@ -68,6 +68,9 @@
 						<dd>
                             <asp:Button id="btnSubmit" name="btnSubmit" runat="server" Text="登录" 
                                 onclick="btnSubmit_Click" />
+                                 &nbsp;&nbsp;
+                     <asp:Button ID="ButtonRegister" runat="server" Text="重置" 
+                      onclick="ButtonRegister_Click"/>
 						</dd>
 					</dl>
 					<div class="clear"></div>
