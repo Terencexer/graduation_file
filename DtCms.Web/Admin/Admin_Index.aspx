@@ -13,7 +13,7 @@
     <style type="text/css">
         .style1
         {
-            width: 24%;
+            width: 62%;
         }
     </style>
 </head>
@@ -73,15 +73,15 @@
             <li><a href="Article/List.aspx" target="sysMain">资讯管理</a></li>
           </ul>
           <ul>
-            <li><a href="Channel/Add.aspx?kindId=<%=(int)Channel.Article %>" target="sysMain">增加类别</a></li>
-            <li><a href="Channel/List.aspx?kindId=<%=(int)Channel.Article %>" target="sysMain">类别管理</a></li>
+            <li><a href="Channel/Add.aspx?kindId=<%=(int)Channel.Article %>" target="sysMain">增加分类</a></li>
+            <li><a href="Channel/List.aspx?kindId=<%=(int)Channel.Article %>" target="sysMain">队伍分类</a></li>
           </ul>
         </div>
         <div class="left_menu">
           <ul>
-            <li><a href="Societies/List.aspx" target="sysMain">社团管理</a></li>
-            <li><a href="Societies/Score.aspx" target="sysMain">社团评分</a></li>
-            <li><a href="Member/List.aspx" target="sysMain">会员管理</a></li>
+            <li><a href="Societies/List.aspx" target="sysMain">队伍管理</a></li>
+            <li><a href="Societies/Score.aspx" target="sysMain">晚会评分</a></li>
+            <li><a href="Member/List.aspx" target="sysMain">学生管理</a></li>
             <li><a href="Feedback/List.aspx" target="sysMain">建议反馈管理</a></li>
             <li><a href="Reviews/List.aspx" target="sysMain">评论管理</a></li>
           </ul>

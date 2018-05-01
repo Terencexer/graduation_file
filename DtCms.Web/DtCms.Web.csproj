@@ -758,6 +758,9 @@
     <Content Include="UpLoadFiles\Thumbnail\2011051319512640.jpg" />
     <Content Include="UpLoadFiles\Thumbnail\2011051319562070.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TeamLeader\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

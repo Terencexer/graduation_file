@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>会员注册</title>
+<title>学生注册</title>
 
 <!-- ===== css ===== -->
 <link rel="shortcut icon" href="<%=SiteConfig.WebPath%>favicon.ico" mce_href="<%=SiteConfig.WebPath%>favicon.ico" type="image/x-icon" />
@@ -26,28 +26,28 @@
 	<ul class="nav">
 		<li><a href="<%=URLRewrite("index", "")%>">首页</a></li>
 		<li><a href="<%=URLRewrite("article", "")%>">新闻中心</a></li>
-		<li><a href="<%=URLRewrite("societies", "")%>">社团评选</a></li>
+		<li><a href="<%=URLRewrite("societies", "")%>">晚会评分</a></li>
 		<li><a href="<%=URLRewrite("feedback", "")%>">意见反馈</a></li>
-		<li><a href="<%=URLRewrite("register", "register")%>">会员注册</a></li>
-		<li><a href="<%=URLRewrite("login", "login")%>">会员登录</a></li>
+		<li><a href="<%=URLRewrite("register", "register")%>">学生注册</a></li>
+		<li><a href="<%=URLRewrite("login", "login")%>">学生登录</a></li>
 		<li><%if (Session["Member"] != null)
-        {%><a href="#">会员名：<%=Session["Member"].ToString()%></a><%}%></li>
+        {%><a href="#">用户名：<%=Session["Member"].ToString()%></a><%}%></li>
 	</ul>
 </div>
 <div class="container">
 	<div class="clear" style="height:20px;"></div>
-	<div class="bread_crumbs"><a href="<%=URLRewrite("index", "")%>">首页</a> > 会员注册
+	<div class="bread_crumbs"><a href="<%=URLRewrite("index", "")%>">首页</a> > 学生注册
 		
 	</div>
 	<div class="page_left">
-		<h2 id="page_title">会员注册</h2>
+		<h2 id="page_title">学生注册</h2>
 		<div id="comment">
 			<div class="clear"></div>
 			<div class="commentform">
-				<div class="nTitle">会员注册</div>
+				<div class="nTitle">学生注册</div>
 				<form id="comment_form" name="comment_form" runat="server">
 				    <dl>
-						<dt>会员名：</dt>
+						<dt>用户名：</dt>
 						<dd>
                             <asp:TextBox ID="txtUserName" runat="server" maxlength="30" class="input2 required" style="width:250px;" ></asp:TextBox>
 						</dd>
@@ -99,7 +99,7 @@
 
 	<div class="footer" style="height:25px;">
 		<p class="footer_links" >
-		    学生社团在线评选系统
+		    浙江财经大学校艺术团学生组织管理系统
 		</p>
 	</div>
 </div>

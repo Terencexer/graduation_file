@@ -64,3 +64,14 @@ F:\bylw\ASP.NET学生社团在线评选系统（13原创）\源代码\DtCms.DAL\
 F:\bylw\ASP.NET学生社团在线评选系统（13原创）\源代码\DtCms.DAL\obj\Debug\ResolveAssemblyReference.cache
 F:\bylw\ASP.NET学生社团在线评选系统（13原创）\源代码\DtCms.DAL\obj\Debug\DtCms.DAL.dll
 F:\bylw\ASP.NET学生社团在线评选系统（13原创）\源代码\DtCms.DAL\obj\Debug\DtCms.DAL.pdb
+D:\Git\graduation_file\DtCms.DAL\bin\Debug\DtCms.DAL.dll
+D:\Git\graduation_file\DtCms.DAL\bin\Debug\DtCms.DAL.pdb
+D:\Git\graduation_file\DtCms.DAL\bin\Debug\DtCms.Common.dll
+D:\Git\graduation_file\DtCms.DAL\bin\Debug\DtCms.DBUtility.dll
+D:\Git\graduation_file\DtCms.DAL\bin\Debug\DtCms.Model.dll
+D:\Git\graduation_file\DtCms.DAL\bin\Debug\DtCms.Common.pdb
+D:\Git\graduation_file\DtCms.DAL\bin\Debug\DtCms.DBUtility.pdb
+D:\Git\graduation_file\DtCms.DAL\bin\Debug\DtCms.Model.pdb
+D:\Git\graduation_file\DtCms.DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\Git\graduation_file\DtCms.DAL\obj\Debug\DtCms.DAL.dll
+D:\Git\graduation_file\DtCms.DAL\obj\Debug\DtCms.DAL.pdb

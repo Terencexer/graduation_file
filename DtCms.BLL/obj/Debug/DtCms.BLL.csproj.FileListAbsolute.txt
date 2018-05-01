@@ -76,3 +76,16 @@ F:\bylw\ASP.NET学生社团在线评选系统（13原创）\源代码\DtCms.BLL\
 F:\bylw\ASP.NET学生社团在线评选系统（13原创）\源代码\DtCms.BLL\obj\Debug\ResolveAssemblyReference.cache
 F:\bylw\ASP.NET学生社团在线评选系统（13原创）\源代码\DtCms.BLL\obj\Debug\DtCms.BLL.dll
 F:\bylw\ASP.NET学生社团在线评选系统（13原创）\源代码\DtCms.BLL\obj\Debug\DtCms.BLL.pdb
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.BLL.dll
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.BLL.pdb
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.Common.dll
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.DAL.dll
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.Model.dll
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.DBUtility.dll
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.Common.pdb
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.DAL.pdb
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.Model.pdb
+D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.DBUtility.pdb
+D:\Git\graduation_file\DtCms.BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\Git\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.dll
+D:\Git\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.pdb
