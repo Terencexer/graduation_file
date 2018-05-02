@@ -8,6 +8,10 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
+using DtCms.BLL;
+using DtCms.Model;
+using DtCms.Common;
+
 
 namespace DtCms.Web.Aspx
 {
@@ -40,12 +44,30 @@ namespace DtCms.Web.Aspx
             }
            
 
-            DtCms.Model.Member member = new DtCms.Model.Member();
-            member.Username = UserName;
-            member.Pwd = pwd;
+           
 
             if (RadioButtonListRole.SelectedValue == "管理员")
             {
+                DtCms.Model.Administrator administrator = new DtCms.Model.Administrator();
+                administrator.UserName = UserName;
+                administrator.UserPwd = pwd;
+                DtCms.BLL.Administrator bll = new DtCms.BLL.Administrator();
+                if (bll.chkAdminLogin(UserName, DESEncrypt.Encrypt(pwd)))
+                {
+                    Session["Administrator"] = UserName;
+                    Response.Write("<script>alert('登录成功！')</script>");
+                    Response.Redirect("~/Admin/Admin_Index.aspx");
+                }
+                else if (bll.GetCount(" Username='" + UserName + "' and UserPwd='" + pwd + "' ") == 0)
+                {
+                    Response.Write("<script>alert('登录失败,管理员名名或密码输入错误！');</script>");
+                }
+            }
+            if (RadioButtonListRole.SelectedValue == "学生")
+            {
+                DtCms.Model.Member member = new DtCms.Model.Member();
+                member.Username = UserName;
+                member.Pwd = pwd;
                 DtCms.BLL.Member bll = new DtCms.BLL.Member();
                 if (bll.GetCount(" Username='" + UserName + "' and Pwd='" + pwd + "' ") > 0)
                 {
@@ -54,20 +76,8 @@ namespace DtCms.Web.Aspx
                 }
                 else
                 {
-                    Response.Write("<script>alert('登录失败,会员名或密码输入错误！');</script>");
+                    Response.Write("<script>alert('登录失败,用户名或密码输入错误！');</script>");
                 }
-            }
-            if (RadioButtonListRole.SelectedValue == "OD")
-            {
-                UserBLL userBLL = new UserBLL();
-                if (userBLL.VerifyUserPwd(TextBoxUserID.Text, TextBoxPwd.Text) == true)
-                {
-                    Session["department"] = userBLL.GetdepartName(TextBoxUserID.Text);
-                    Response.Redirect("~/OD/ODdefault.aspx");
-                    //ClientScript.RegisterClientScriptBlock(Page.GetType(), "", "<script>alert('登陆成功')</script>");
-                }
-                else
-                    ClientScript.RegisterClientScriptBlock(Page.GetType(), "", "<script>alert('用户名或密码错误!')</script>");
             }
         }
         protected void ButtonReset_Click(object sender, EventArgs e)
@@ -77,6 +87,10 @@ namespace DtCms.Web.Aspx
             txtCode.Text = "";
         }
 
+        protected void RadioButtonListRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
        
     }
 }

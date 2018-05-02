@@ -41,11 +41,11 @@
 		
 	</div>
 	<div class="page_left">
-		<h2 id="page_title">学生登录</h2>
+		<h2 id="page_title">登录</h2>
 		<div id="comment">
 			<div class="clear"></div>
 			<div class="commentform">
-				<div class="nTitle">学生登录</div>
+				<div class="nTitle">登录</div>
 				<form id="comment_form" name="comment_form" runat="server">
 				    <dl>
 						<dt>用户名：</dt>
@@ -73,7 +73,8 @@
         <asp:RadioButtonList ID="RadioButtonListRole" runat="server" Font-Size="Medium" 
             RepeatDirection="Horizontal" align="center" Font-Names="Aharoni" 
                  ForeColor="#333300" Width="288px" 
-                                onselectedindexchanged="RadioButtonListRole_SelectedIndexChanged">
+                                onselectedindexchanged="RadioButtonListRole_SelectedIndexChanged" 
+                                     AutoPostBack="True">
             <asp:ListItem Selected="True">管理员</asp:ListItem>
             <asp:ListItem >学生</asp:ListItem>
              <asp:ListItem>队长</asp:ListItem>
@@ -83,7 +84,7 @@
                                 onclick="btnSubmit_Click" />
                                  &nbsp;&nbsp;
                      <asp:Button ID="ButtonReset" runat="server" Text="重置" 
-                      onclick="ButtonRegister_Click"/>
+                      onclick="ButtonReset_Click"/>
 						</dd>
 					</dl>
 					<div class="clear"></div>
