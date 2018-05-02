@@ -44,22 +44,39 @@ namespace DtCms.Web.Aspx
             member.Username = UserName;
             member.Pwd = pwd;
 
-            DtCms.BLL.Member bll = new DtCms.BLL.Member();
-            if (bll.GetCount(" Username='" + UserName + "' and Pwd='" + pwd + "' ") > 0)
+            if (RadioButtonListRole.SelectedValue == "管理员")
             {
-                Session["Member"] = UserName;
-                Response.Write("<script>alert('登录成功！');window.location.href='index.aspx'</script>");
+                DtCms.BLL.Member bll = new DtCms.BLL.Member();
+                if (bll.GetCount(" Username='" + UserName + "' and Pwd='" + pwd + "' ") > 0)
+                {
+                    Session["Member"] = UserName;
+                    Response.Write("<script>alert('登录成功！');window.location.href='index.aspx'</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('登录失败,会员名或密码输入错误！');</script>");
+                }
             }
-            else
+            if (RadioButtonListRole.SelectedValue == "OD")
             {
-                Response.Write("<script>alert('登录失败,会员名或密码输入错误！');</script>");
+                UserBLL userBLL = new UserBLL();
+                if (userBLL.VerifyUserPwd(TextBoxUserID.Text, TextBoxPwd.Text) == true)
+                {
+                    Session["department"] = userBLL.GetdepartName(TextBoxUserID.Text);
+                    Response.Redirect("~/OD/ODdefault.aspx");
+                    //ClientScript.RegisterClientScriptBlock(Page.GetType(), "", "<script>alert('登陆成功')</script>");
+                }
+                else
+                    ClientScript.RegisterClientScriptBlock(Page.GetType(), "", "<script>alert('用户名或密码错误!')</script>");
             }
         }
-        protected void ButtonRegister_Click(object sender, EventArgs e)
+        protected void ButtonReset_Click(object sender, EventArgs e)
         {
             txtUserName.Text = "";
             txtpwd.Text = "";
             txtCode.Text = "";
         }
+
+       
     }
 }

@@ -66,10 +66,23 @@
 							
 							<a href="javascript:void(0);" onclick="ToggleCode(this, '<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx');return false;"><img src="<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx" width="80" height="22" alt="点击切换验证码" style="vertical-align:middle;"> 看不清楚？</a> </dd>
 						<dd>
+                                 <br />
+         
+            <br />
+            
+        <asp:RadioButtonList ID="RadioButtonListRole" runat="server" Font-Size="Medium" 
+            RepeatDirection="Horizontal" align="center" Font-Names="Aharoni" 
+                 ForeColor="#333300" Width="288px" 
+                                onselectedindexchanged="RadioButtonListRole_SelectedIndexChanged">
+            <asp:ListItem Selected="True">管理员</asp:ListItem>
+            <asp:ListItem >学生</asp:ListItem>
+             <asp:ListItem>队长</asp:ListItem>
+            <asp:ListItem>团员</asp:ListItem>
+        </asp:RadioButtonList>
                             <asp:Button id="btnSubmit" name="btnSubmit" runat="server" Text="登录" 
                                 onclick="btnSubmit_Click" />
                                  &nbsp;&nbsp;
-                     <asp:Button ID="ButtonRegister" runat="server" Text="重置" 
+                     <asp:Button ID="ButtonReset" runat="server" Text="重置" 
                       onclick="ButtonRegister_Click"/>
 						</dd>
 					</dl>
