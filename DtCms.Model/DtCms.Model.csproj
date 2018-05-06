@@ -87,6 +87,7 @@
     <Compile Include="Score.cs" />
     <Compile Include="Societies.cs" />
     <Compile Include="SystemLog.cs" />
+    <Compile Include="TeamLeader.cs" />
     <Compile Include="Templates.cs" />
     <Compile Include="WebSet.cs" />
     <Compile Include="SiteUrl.cs" />

@@ -91,10 +91,12 @@ namespace DtCms.Web.UI
         {
             Hashtable _siteurls = new DtCms.BLL.SiteUrl().loadConfig(Utils.GetXmlMapPath("Urlspath"));
             DtCms.Model.SiteUrl model = _siteurls[_key] as DtCms.Model.SiteUrl;
-            if (model == null)
+           
+          if (model == null)
             {
                 return "";
             }
+     
             try
             {
                 string _rewriteurl = string.Format(model.Path, _params);

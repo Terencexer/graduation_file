@@ -27,11 +27,11 @@ namespace DtCms.Web.Aspx
             string Code = txtCode.Text.Trim();
             string UserName = txtUserName.Text.Trim();
             string pwd = txtpwd.Text.Trim();
-            if (Code.ToLower() != (Session["DtCode"].ToString()).ToLower())
-            {
-                Response.Write("<script>alert('您输入的验证码与系统的不一致！');</script>");
-                return;
-            }
+      //      if (Code.ToLower() != (Session["DtCode"].ToString()).ToLower())
+       //     {
+       //         Response.Write("<script>alert('您输入的验证码与系统的不一致！');</script>");
+       //         return;
+       //     }
             if (string.IsNullOrEmpty(UserName))
             {
                 Response.Write("<script>alert('请输入会员名！');</script>");
@@ -73,6 +73,23 @@ namespace DtCms.Web.Aspx
                 {
                     Session["Member"] = UserName;
                     Response.Write("<script>alert('登录成功！');window.location.href='index.aspx'</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('登录失败,用户名或密码输入错误！');</script>");
+                }
+            }
+            if (RadioButtonListRole.SelectedValue == "队长")
+            {
+                DtCms.Model.TeamLeader teamleader = new DtCms.Model.TeamLeader();
+                teamleader.Username = UserName;
+                teamleader.Pwd = pwd;
+                DtCms.BLL.TeamLeader bll = new DtCms.BLL.TeamLeader();
+                if (bll.GetCount(" Username='" + UserName + "' and Pwd='" + pwd + "' ") > 0)
+                {
+                    Session["TeamLeader"] = UserName;
+                    Response.Write("<script>alert('登录成功！');window.location.href='Tindex.aspx'</script>");
+                   
                 }
                 else
                 {
