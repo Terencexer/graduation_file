@@ -58,6 +58,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Aspx\Tacvitity_apply.aspx" />
     <Content Include="Aspx\Tfeedback.aspx" />
     <Content Include="Aspx\Tindex.aspx" />
     <Content Include="Css\custom-theme\images\ui-bg_diagonals-medium_20_423e3e_40x40.png" />
@@ -336,6 +337,13 @@
     </Compile>
     <Compile Include="Aspx\societies_show.aspx.designer.cs">
       <DependentUpon>societies_show.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspx\Tacvitity_apply.aspx.cs">
+      <DependentUpon>Tacvitity_apply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\Tacvitity_apply.aspx.designer.cs">
+      <DependentUpon>Tacvitity_apply.aspx</DependentUpon>
     </Compile>
     <Compile Include="Aspx\Tfeedback.aspx.cs">
       <DependentUpon>Tfeedback.aspx</DependentUpon>
@@ -790,7 +798,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>6315</DevelopmentServerPort>
+          <DevelopmentServerPort>42331</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

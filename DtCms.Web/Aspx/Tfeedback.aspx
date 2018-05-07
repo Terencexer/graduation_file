@@ -23,6 +23,26 @@
         AjaxOnSubmit("comment_form", "btnSubmit", "<%=SiteConfig.WebPath%>Tools/Submit_json.ashx?action=feedback");
     });
 </script>
+<style type="text/css">  
+.sub_menue  
+{  
+    font: 12px bolder "Lucida Grande" ,​Helvetica,​Arial,​Verdana,​sans-serif; /* 设置文字大小和字体样式 */  
+    height: 40px;  
+    background:#FFFFFF;  
+    display :none;              /*先将子菜单设置为隐藏*/  
+}  
+li:hover .sub_menue  
+{  
+    background: #EDEDED; /* 变换背景色 */  
+    color: #fff; /* 变换文字颜色 */  
+    border: 1px solid #000;  
+    display:block;             /*设置鼠标滑过动作，以块级元素的形式显示出子菜单*/  
+}  
+.clear{
+        clear:both;
+    }
+
+</style>   
 </head>
 <body>
 
@@ -30,21 +50,24 @@
 <div class="top">
 	<!-- ===== 导航 ===== -->
 	<ul class="nav">
-		<li><a href="Tindex.aspx">首页</a></li>
-		<li><a href="Tfeedback.aspx">意见反馈</a></li>
-		<li><a href="login.aspx">学生登录</a></li>
-		<li><%if (Session["TeamLeader"] != null)
+		<li><a href="Tindex.aspx">首页</a>
+        </li>
+		<li><a href="Tfeedback.aspx" >意见反馈</a></li>
+		
+        <li><a href="login.aspx" >学生登录</a></li>
+        <li><a href="Tindex.aspx">活动承办</a>
+	    <ul class="sub_menue">
+           <li ><a href="Tacvitity_apply.aspx"style="text-align:center">活动申请</a>
+            <ul class="sub_menue">
+           <li ><a href="Tfeedback.aspx" style="text-align:center" >意见反馈</a></li>
+           </ul>
+          </li>
+        </ul>
+        </li>
+        <li><%if (Session["TeamLeader"] != null)
         {%><a href="#">用户名：<%=Session["TeamLeader"].ToString()%></a><%}%></li>
 	</ul>
 </div>
-
-<!-- ===== 正文内容 ===== -->
-<div class="container">
-	
-   <div class="clear" style="height:20px;"></div>
-	<div class="bread_crumbs"><a href="Tindex.aspx">首页</a> > 意见反馈
-		<div class="right_function_key"></div>
-	</div>
 	<!-- ===== 左侧正文 ===== -->
 	<div class="page_left">
 		<h2 id="page_title">意见反馈</h2>

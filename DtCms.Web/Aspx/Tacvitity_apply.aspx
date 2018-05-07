@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Tindex.aspx.cs" Inherits="DtCms.Web.Aspx.Tindex" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Tacvitity_apply.aspx.cs" Inherits="DtCms.Web.Aspx.Tacvitity_apply" %>
 <%@ Import namespace="DtCms.Common" %>
 <%@ Register TagPrefix="DtContorl" Namespace="DtCms.Web.UI" Assembly="DtCms.Web.UI" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -46,7 +46,7 @@ li:hover .sub_menue
 		<li><a href="Tfeedback.aspx" >意见反馈</a></li>
 		
         <li><a href="login.aspx" >学生登录</a></li>
-        <li><a href="">活动承办</a>
+        <li><a href="Tindex.aspx">活动承办</a>
 	    <ul class="sub_menue">
            <li ><a href="Tacvitity_apply.aspx"style="text-align:center">活动申请</a>
             <ul class="sub_menue">
@@ -59,7 +59,6 @@ li:hover .sub_menue
         {%><a href="#">用户名：<%=Session["TeamLeader"].ToString()%></a><%}%></li>
 	</ul>
 </div>
-
 <!-- ===== 正文内容 ===== -->
 <div class="container">
 	
@@ -68,7 +67,46 @@ li:hover .sub_menue
 	<!-- ===== 横幅首页图片 ===== -->
 	<div class="banner"><script type="text/javascript" src="/Tools/Advert_js.ashx?id=2"></script></div>
 	<div class="clear"></div>
-	
+	<hr />
+    <div class="commentform">
+				<div class="nTitle">提交策划</div>
+				<form id="comment_form" name="comment_form">
+					<dl>
+						<dt>申请人：</dt>
+						<dd><input name="Applicant" type="text" maxlength="30" class="input2 required" style="width:265px;" /></dd>
+					</dl>
+					<dl>
+						<dt>活动名字：</dt>
+						<dd><input name="ATitle" type="text" maxlength="30" class="input2 required" style="width:265px;" /></dd>
+					</dl>
+					<dl>
+						<dt>预算：</dt>
+						<dd><input name="ABudget" type="text" maxlength="20" class="input2 required" style="width:265px;" /></dd>
+					</dl>
+					<dl>
+						<dt>时间：</dt>
+						<dd><input name="ATime" type="text" maxlength="100" class="input2 required" style="width:350px;" /></dd>
+					</dl>
+                    <dl>
+						<dt>地点：</dt>
+						<dd><input name="APlace" type="text" maxlength="100" class="input2 required" style="width:350px;" /></dd>
+					</dl>
+					<dl>
+						<dt>具体策划：</dt>
+						<dd><textarea name="txtContent" class="textarea required" minlength="5" maxlength="3000"></textarea></dd>
+					</dl>
+					<dl>
+						<dt>验证码：</dt>
+						<dd style="width:350px;">
+							<input name="txtCode" type="text" class="input2 required" minlength="4" maxlength="5" style="width:50px;" />
+							<a href="javascript:void(0);" onclick="ToggleCode(this, '<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx');return false;"><img src="<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx" width="80" height="22" alt="点击切换验证码" style="vertical-align:middle;"> 看不清楚？</a> </dd>
+						<dd>
+							<input id="btnSubmit" name="btnSubmit" type="submit" class="submit2" value="提交保存">
+						</dd>
+					</dl>
+					<div class="clear"></div>
+				</form>
+			</div>
 	<div class="news_list">
 		<ul>
 			
