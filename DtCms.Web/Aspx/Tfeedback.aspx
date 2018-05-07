@@ -68,10 +68,18 @@ li:hover .sub_menue
         {%><a href="#">用户名：<%=Session["TeamLeader"].ToString()%></a><%}%></li>
 	</ul>
 </div>
+
+<!-- ===== 正文内容 ===== -->
+<div class="container">
+	
+   <div class="clear" style="height:20px;"></div>
+	<div class="bread_crumbs"><a href="Tindex.aspx">首页</a> > 意见反馈
+		<div class="right_function_key"></div>
+	</div>
 	<!-- ===== 左侧正文 ===== -->
 	<div class="page_left">
 		<h2 id="page_title">意见反馈</h2>
-        <div id="comment">
+		<div id="comment">
 			<div id="commentList">
 				<DtContorl:Repeater ID="rptFeedbackList" runat="server" onload="Feedback_List_DataBind" Where="IsLock=0" PageSize='<%#this.pagesize %>' PageIndex='<%#this.page %>'>
                 <ItemTemplate>
@@ -121,7 +129,7 @@ li:hover .sub_menue
 							<input name="txtCode" type="text" class="input2 required" minlength="4" maxlength="5" style="width:50px;" />
 							<a href="javascript:void(0);" onclick="ToggleCode(this, '<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx');return false;"><img src="<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx" width="80" height="22" alt="点击切换验证码" style="vertical-align:middle;"> 看不清楚？</a> </dd>
 						<dd>
-							<input id="btnSubmit" name="btnSubmit" type="submit" class="submit2" value="提交保存">
+							<input id="btnSubmit" name="btnSubmit" type="submit" class="submit2" value="提交保存"
 						</dd>
 					</dl>
 					<div class="clear"></div>
@@ -131,7 +139,6 @@ li:hover .sub_menue
 		</div>
 	</div>
 	<!-- ===== 左侧子导航 ===== -->
-	
 	<div class="clear"></div>
 </div>
 
@@ -140,9 +147,10 @@ li:hover .sub_menue
 	<div class="footer" style="height:25px;">
 		<p class="footer_links" >
 		    浙江财经大学校艺术团学生组织管理系统
-		</p>
+			</p>
 	</div>
 </div>
 
 </body>
 </html>
+

@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activity.cs" />
     <Compile Include="Adbanner.cs" />
     <Compile Include="Administrator.cs" />
     <Compile Include="Advertising.cs" />

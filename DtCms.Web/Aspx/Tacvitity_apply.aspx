@@ -14,6 +14,16 @@
   <link rel="stylesheet" href="<%=SiteTemplatePath("default")%>css/style.css" /> 
 <script type="text/javascript" src="<%=SiteConfig.WebPath%>js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript" src="<%=SiteTemplatePath("default")%>js/base.js"></script>
+<link rel="shortcut icon" href="<%=SiteConfig.WebPath%>favicon.ico" mce_href="<%=SiteConfig.WebPath%>favicon.ico" type="image/x-icon" />
+
+
+<script type="text/javascript" src="<%=SiteConfig.WebPath%>js/jquery.form.js"></script>
+<script type="text/javascript" src="<%=SiteConfig.WebPath%>js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<%=SiteConfig.WebPath%>js/messages_cn.js"></script>
+<link type="text/css" rel="stylesheet" href="<%=SiteConfig.WebPath%>images/library/msg.css" />
+<script type="text/javascript" src="<%=SiteConfig.WebPath%>images/library/msg.js"></script>
+<script type="text/javascript" src="<%=SiteTemplatePath("default")%>js/send_json.js"></script>
+
 <style type="text/css">  
 .sub_menue  
 {  
@@ -70,39 +80,72 @@ li:hover .sub_menue
 	<hr />
     <div class="commentform">
 				<div class="nTitle">提交策划</div>
-				<form id="comment_form" name="comment_form">
+				<form id="comment_form" runat="server">
+                <dl>    
+                
+						<dt>活动ID：</dt>
+						<dd>
+                            <asp:TextBox ID="TextBoxAID" runat="server" ></asp:TextBox>
+                            <asp:Label ID="Label1" runat="server" 
+                                Text="活动日期+活动名称缩写，如2018年4月10日音乐专场：20180410yyzc"></asp:Label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                ControlToValidate="TextBoxAID" Display="Dynamic" ErrorMessage="编号不能为空"></asp:RequiredFieldValidator>
+                        </dd>
+					</dl>
 					<dl>
 						<dt>申请人：</dt>
-						<dd><input name="Applicant" type="text" maxlength="30" class="input2 required" style="width:265px;" /></dd>
+						<dd>
+                            <asp:TextBox ID="TextBoxApplicant" ReadOnly="True" runat="server" BackColor="Silver" ></asp:TextBox>
+                        </dd>
 					</dl>
 					<dl>
 						<dt>活动名字：</dt>
-						<dd><input name="ATitle" type="text" maxlength="30" class="input2 required" style="width:265px;" /></dd>
+						<dd>
+                            <asp:TextBox ID="TextBoxActivity" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                                ControlToValidate="TextBoxActivity" ErrorMessage="输入格式为“XXXX-XX-XX&quot;" 
+                                ValidationExpression="XXXX-XX-XX"></asp:RegularExpressionValidator>
+                        </dd>
 					</dl>
 					<dl>
 						<dt>预算：</dt>
-						<dd><input name="ABudget" type="text" maxlength="20" class="input2 required" style="width:265px;" /></dd>
+						<dd>
+                            <asp:TextBox ID="TextBoxBudget" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                                ControlToValidate="TextBoxBudget" ErrorMessage="请输入整数" 
+                                ValidationExpression="^\+?[1-9][0-9]*$"></asp:RegularExpressionValidator>
+                        </dd>
 					</dl>
 					<dl>
 						<dt>时间：</dt>
-						<dd><input name="ATime" type="text" maxlength="100" class="input2 required" style="width:350px;" /></dd>
+						<dd>
+                            <asp:TextBox ID="TextBoxATime" runat="server"></asp:TextBox>
+                        </dd>
 					</dl>
                     <dl>
 						<dt>地点：</dt>
-						<dd><input name="APlace" type="text" maxlength="100" class="input2 required" style="width:350px;" /></dd>
+						<dd>
+                            <asp:TextBox ID="TextBoxAPlace" runat="server"></asp:TextBox>
+                        </dd>
 					</dl>
 					<dl>
 						<dt>具体策划：</dt>
-						<dd><textarea name="txtContent" class="textarea required" minlength="5" maxlength="3000"></textarea></dd>
+						<dd><textarea name="txtAContent" class="textarea required" minlength="5" 
+                                maxlength="3000" id="TextAreaContent1"></textarea></dd>
+					</dl>
+                    <dl>
+						<dt>审核状态：</dt>
+						<dd><asp:TextBox ID="TextBoxAudMode" ReadOnly="True" runat="server" BackColor="Silver">未审核</asp:TextBox></textarea></dd>
 					</dl>
 					<dl>
-						<dt>验证码：</dt>
+						<dt>验证码：</dt>   
 						<dd style="width:350px;">
 							<input name="txtCode" type="text" class="input2 required" minlength="4" maxlength="5" style="width:50px;" />
-							<a href="javascript:void(0);" onclick="ToggleCode(this, '<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx');return false;"><img src="<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx" width="80" height="22" alt="点击切换验证码" style="vertical-align:middle;"> 看不清楚？</a> </dd>
-						<dd>
-							<input id="btnSubmit" name="btnSubmit" type="submit" class="submit2" value="提交保存">
-						</dd>
+							<a href="javascript:void(0);" onclick="ToggleCode(this, '<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx');return false;"><img src="<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx" width="80" height="22" alt="点击切换验证码" style="vertical-align:middle;"> 看不清楚？</a>
+                         </dd>
+                         <dd>   
+                            <asp:Button ID="ButtonAS" runat="server" onclick="ActSubmit" Text="提交申请" />
+                        </dd>
 					</dl>
 					<div class="clear"></div>
 				</form>
@@ -120,7 +163,7 @@ li:hover .sub_menue
 	<div class="footer" style="height:25px;">
 		<p class="footer_links" >
 		   浙江财经大学校艺术团学生组织管理系统
-		</p>
+		/p>
 	</div>
 </div>
 
