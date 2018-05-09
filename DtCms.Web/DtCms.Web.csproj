@@ -58,6 +58,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Activity\ActivityAudit.aspx" />
     <Content Include="Aspx\Tacvitity_apply.aspx" />
     <Content Include="Aspx\Tfeedback.aspx" />
     <Content Include="Aspx\Tindex.aspx" />
@@ -101,6 +102,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Activity\ActivityAudit.aspx.cs">
+      <DependentUpon>ActivityAudit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Activity\ActivityAudit.aspx.designer.cs">
+      <DependentUpon>ActivityAudit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Admin_Center.aspx.cs">
       <DependentUpon>Admin_Center.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -472,7 +480,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DtCms.Bll\DtCms.BLL.csproj">
+    <ProjectReference Include="..\DtCms.BLL\DtCms.BLL.csproj">
       <Project>{DA2C18D9-EAB9-4F30-A1B8-F0DE3E64FFA5}</Project>
       <Name>DtCms.BLL</Name>
     </ProjectReference>

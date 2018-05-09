@@ -33,3 +33,8 @@ D:\Git\graduation_file\Dtcms.DBUtility\bin\Debug\DtCms.DBUtility.pdb
 D:\Git\graduation_file\Dtcms.DBUtility\obj\Debug\ResolveAssemblyReference.cache
 D:\Git\graduation_file\Dtcms.DBUtility\obj\Debug\DtCms.DBUtility.dll
 D:\Git\graduation_file\Dtcms.DBUtility\obj\Debug\DtCms.DBUtility.pdb
+E:\graduation_file8\graduation_file\Dtcms.DBUtility\bin\Debug\DtCms.DBUtility.dll
+E:\graduation_file8\graduation_file\Dtcms.DBUtility\bin\Debug\DtCms.DBUtility.pdb
+E:\graduation_file8\graduation_file\Dtcms.DBUtility\obj\Debug\ResolveAssemblyReference.cache
+E:\graduation_file8\graduation_file\Dtcms.DBUtility\obj\Debug\DtCms.DBUtility.dll
+E:\graduation_file8\graduation_file\Dtcms.DBUtility\obj\Debug\DtCms.DBUtility.pdb

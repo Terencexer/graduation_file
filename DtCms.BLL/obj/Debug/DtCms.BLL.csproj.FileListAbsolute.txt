@@ -89,3 +89,16 @@ D:\Git\graduation_file\DtCms.BLL\bin\Debug\DtCms.DBUtility.pdb
 D:\Git\graduation_file\DtCms.BLL\obj\Debug\ResolveAssemblyReference.cache
 D:\Git\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.dll
 D:\Git\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.pdb
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.BLL.dll
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.BLL.pdb
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.Common.dll
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.DAL.dll
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.Model.dll
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.DBUtility.dll
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.Common.pdb
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.DAL.pdb
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.Model.pdb
+E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.DBUtility.pdb
+E:\graduation_file8\graduation_file\DtCms.BLL\obj\Debug\ResolveAssemblyReference.cache
+E:\graduation_file8\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.dll
+E:\graduation_file8\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.pdb

@@ -31,6 +31,7 @@
 		<li><a href="<%=URLRewrite("feedback", "")%>">意见反馈</a></li>
 		<li><a href="<%=URLRewrite("register", "register")%>">学生注册</a></li>
 		<li><a href="<%=URLRewrite("login", "login")%>">学生登录</a></li>
+        <li><a href="../Admin/Login.aspx">管理员登录</a></li>
 		<li><%if (Session["Member"] != null)
         {%><a href="#">用户名：<%=Session["Member"].ToString()%></a><%}%></li>
 	</ul>
@@ -47,7 +48,21 @@
 			<div class="commentform">
 				<div class="nTitle">登录</div>
 				<form id="comment_form" name="comment_form" runat="server">
-				    <dl>
+       <div align="center"">
+        <asp:RadioButtonList ID="RadioButtonListRole" runat="server" Font-Size="Medium" 
+            RepeatDirection="Horizontal" align="center" Font-Names="Aharoni" 
+                 ForeColor="#333300" Width="188px" 
+                                onselectedindexchanged="RadioButtonListRole_SelectedIndexChanged" 
+                                     AutoPostBack="True">
+           
+            <asp:ListItem Selected="True">学生</asp:ListItem>
+             <asp:ListItem>队长</asp:ListItem>
+            
+        </asp:RadioButtonList>
+       </div>
+			<br />
+        
+            	    <dl>
 						<dt>用户名：</dt>
 						<dd>
                             <asp:TextBox ID="txtUserName" runat="server" maxlength="30" class="input2 required" style="width:250px;" ></asp:TextBox>
@@ -62,30 +77,21 @@
 					<dl>
 						<dt>验证码：</dt>
 						<dd style="width:385px;">
-						    <asp:TextBox ID="txtCode" runat="server" minlength="4" maxlength="5" class="input2 required" style="width:50px;" ></asp:TextBox>
+						    <asp:TextBox ID="txtCode" runat="server" minlength="4" maxlength="5" class="input2 required" style="width:100px;" ></asp:TextBox>
 							
 							<a href="javascript:void(0);" onclick="ToggleCode(this, '<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx');return false;"><img src="<%=SiteConfig.WebPath%>Tools/VerifyCodeImage.ashx" width="80" height="22" alt="点击切换验证码" style="vertical-align:middle;"> 看不清楚？</a> </dd>
-						<dd>
+				
                                  <br />
          
+						<br />
             <br />
-            
-        <asp:RadioButtonList ID="RadioButtonListRole" runat="server" Font-Size="Medium" 
-            RepeatDirection="Horizontal" align="center" Font-Names="Aharoni" 
-                 ForeColor="#333300" Width="288px" 
-                                onselectedindexchanged="RadioButtonListRole_SelectedIndexChanged" 
-                                     AutoPostBack="True">
-            <asp:ListItem Selected="True">管理员</asp:ListItem>
-            <asp:ListItem >学生</asp:ListItem>
-             <asp:ListItem>队长</asp:ListItem>
-            <asp:ListItem>团员</asp:ListItem>
-        </asp:RadioButtonList>
+            <div align="center">
                             <asp:Button id="btnSubmit" name="btnSubmit" runat="server" Text="登录" 
                                 onclick="btnSubmit_Click" />
                                  &nbsp;&nbsp;
                      <asp:Button ID="ButtonReset" runat="server" Text="重置" 
                       onclick="ButtonReset_Click"/>
-						</dd>
+                      </div>
 					</dl>
 					<div class="clear"></div>
 				</form>

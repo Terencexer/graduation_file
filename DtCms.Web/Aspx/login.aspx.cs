@@ -45,24 +45,26 @@ namespace DtCms.Web.Aspx
            
 
            
+            
+           // if (RadioButtonListRole.SelectedValue == "管理员")
+            //{
+              //  DtCms.Model.Administrator administrator = new DtCms.Model.Administrator();
+               // administrator.UserName = UserName;
+               // administrator.UserPwd = pwd;
+               // DtCms.BLL.Administrator bll = new DtCms.BLL.Administrator();
+               // if (bll.chkAdminLogin(UserName, DESEncrypt.Encrypt(pwd)))
+                //{
+                   // Session["Administrator"] = UserName;
+                  //  Response.Write("<script>alert('登录成功！')</script>");
+                 //   Response.Redirect("~/Admin/Admin_Index.aspx");
+               // }
+               // else if (bll.GetCount(" Username='" + UserName + "' and UserPwd='" + pwd + "' ") == 0)
+               // {
+                 //   Response.Write("<script>alert('登录失败,管理员名名或密码输入错误！');</script>");
+              //  }
+           // }
 
-            if (RadioButtonListRole.SelectedValue == "管理员")
-            {
-                DtCms.Model.Administrator administrator = new DtCms.Model.Administrator();
-                administrator.UserName = UserName;
-                administrator.UserPwd = pwd;
-                DtCms.BLL.Administrator bll = new DtCms.BLL.Administrator();
-                if (bll.chkAdminLogin(UserName, DESEncrypt.Encrypt(pwd)))
-                {
-                    Session["Administrator"] = UserName;
-                    Response.Write("<script>alert('登录成功！')</script>");
-                    Response.Redirect("~/Admin/Admin_Index.aspx");
-                }
-                else if (bll.GetCount(" Username='" + UserName + "' and UserPwd='" + pwd + "' ") == 0)
-                {
-                    Response.Write("<script>alert('登录失败,管理员名名或密码输入错误！');</script>");
-                }
-            }
+            
             if (RadioButtonListRole.SelectedValue == "学生")
             {
                 DtCms.Model.Member member = new DtCms.Model.Member();
@@ -108,6 +110,7 @@ namespace DtCms.Web.Aspx
         {
 
         }
-       
+
+      
     }
 }

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-    <title>社团管理</title>
+    <title>队伍管理</title>
     <link rel="stylesheet" type="text/css" href="../images/style.css" />
     <link href="../../css/pagination.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../js/jquery-1.3.2.min.js"></script>
@@ -43,7 +43,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="navigation"><span class="add"><a href="add.aspx">增加社团</a></span><b>您当前的位置：首页 &gt; 社团管理 &gt; 社团列表</b></div>
+    <div class="navigation"><span class="add"><a href="add.aspx">增加队伍</a></span><b>您当前的位置：首页 &gt; 队伍管理 &gt; 队伍列表</b></div>
     <div class="spClear"></div>
     <asp:Repeater ID="rptList" runat="server">
     <HeaderTemplate>
@@ -51,8 +51,8 @@
       <tr>
         <th width="10%">选择</th>
         <th width="10%">编号</th>
-        <th width="10%">社团名</th>
-        <th width="50%">社团介绍</th>
+        <th width="10%">队伍名</th>
+        <th width="50%">队伍介绍</th>
         <th width="10%">添加日期</th>
         <th width="10%">操作</th>
       </tr>

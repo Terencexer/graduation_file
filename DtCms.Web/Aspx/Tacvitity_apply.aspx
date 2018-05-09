@@ -102,9 +102,6 @@ li:hover .sub_menue
 						<dt>活动名字：</dt>
 						<dd>
                             <asp:TextBox ID="TextBoxActivity" runat="server"></asp:TextBox>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-                                ControlToValidate="TextBoxActivity" ErrorMessage="输入格式为“XXXX-XX-XX&quot;" 
-                                ValidationExpression="XXXX-XX-XX"></asp:RegularExpressionValidator>
                         </dd>
 					</dl>
 					<dl>
@@ -120,6 +117,8 @@ li:hover .sub_menue
 						<dt>时间：</dt>
 						<dd>
                             <asp:TextBox ID="TextBoxATime" runat="server"></asp:TextBox>
+                            <asp:Label ID="Label2" runat="server" 
+                                Text="格式为“XXXX-XX-XX XX:XX&quot;,如”2018-5-20 18:30&quot;"></asp:Label>
                         </dd>
 					</dl>
                     <dl>

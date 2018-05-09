@@ -15,7 +15,7 @@ namespace DtCms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from dt_TacvitityApply");
-            strSql.Append(" where ActivityId= '"+Id+"'");
+            strSql.Append(" where ActivityId= '" + Id + "'");
             SqlParameter[] parameters = {
 					new SqlParameter("@ActivityId", SqlDbType.VarChar,20)};
             parameters[0].Value = Id;
@@ -48,7 +48,7 @@ namespace DtCms.DAL
             strSql.Append("ActivityId,Applicant,Title,Budget,ATime,AConten,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,TicketNum,TicketType)");
             strSql.Append(" values (");
             strSql.Append("@ActivityId,@Applicant,@Title,@Budget,@ATime,@AConten,@Place,@AddTime,@CheckStatus,@Preparation,@Middle,@LastPre,@TicketNum,@TicketType)");
-            
+
             SqlParameter[] parameters = {
 					new SqlParameter("@ActivityId", SqlDbType.VarChar,20),
 					new SqlParameter("@Applicant", SqlDbType.NVarChar,20),
@@ -99,7 +99,7 @@ namespace DtCms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update dt_TacvitityApply set " + strValue);
-            strSql.Append(" where ActivityId=" + Id);
+            strSql.Append(" where ActivityId='" + Id + "'");
             DbHelperSQL.ExecuteSql(strSql.ToString());
         }
 
@@ -137,7 +137,7 @@ namespace DtCms.DAL
             parameters[4].Value = model.ATime;
             parameters[5].Value = model.AConten;
             parameters[6].Value = model.Place;
-          
+
             parameters[7].Value = model.AddTime;
             parameters[8].Value = model.CheckStatus;
             parameters[9].Value = model.Preparation;
@@ -165,7 +165,7 @@ namespace DtCms.DAL
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from dt_TacvitityApply ");
-            strSql.Append(" where ActivityId=@Id");
+            strSql.Append(" where ActivityId='" + Id + "'");
             SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.VarChar,20)
             };
@@ -215,6 +215,53 @@ namespace DtCms.DAL
                 strSql.Append(" where " + strWhere);
             }
             return DbHelperSQL.Query(strSql.ToString());
+        }
+        public void UpdateOneRecordAuditStatus(string ActivityId, string strValue)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update dt_TacvitityApply set CheckStatus='" + strValue + "'");
+            strSql.Append(" where ActivityId='" + ActivityId + "'");
+            DbHelperSQL.ExecuteSql(strSql.ToString());
+        }
+        public DtCms.Model.Activity QueryOneRecord(string activityId)
+        {
+            DtCms.Model.Activity activity;
+
+
+            string cmdstr = "Select * From dt_TacvitityApply Where ActivityId='" + activityId + "'";
+            SqlParameter[] SqlParam = new SqlParameter[1];
+            SqlParam[0] = new SqlParameter("@ActivityId", activityId);
+
+            //获取SqlDataReader对象
+            SqlDataReader dataReader = DbHelperSQL.ExecuteReader(cmdstr, SqlParam);
+
+            if (dataReader.Read())
+            {
+                activity = new DtCms.Model.Activity();
+
+                activity.ActivityId = dataReader["ActivityId"].ToString();
+                activity.Applicant = dataReader["Applicant"].ToString();
+                activity.Title = dataReader["Title"].ToString();
+                activity.Budget = Convert.ToInt32(dataReader["Budget"]);
+
+                activity.ATime = Convert.ToDateTime(dataReader["ATime"].ToString());
+                activity.AddTime = Convert.ToDateTime(dataReader["AddTime"].ToString());
+                activity.AConten = dataReader["AConten"].ToString();
+                activity.Place = dataReader["Place"].ToString();
+                activity.CheckStatus = dataReader["CheckStatus"].ToString();
+                activity.Preparation = dataReader["Preparation"].ToString();
+                activity.Middle = dataReader["Middle"].ToString();
+                activity.LastPre = dataReader["LastPre"].ToString();
+                activity.TicketNum = Convert.ToInt32(dataReader["TicketNum"]);
+
+                activity.TicketType = dataReader["TicketType"].ToString();
+            }
+            else
+                activity = null;
+            dataReader.Close();
+
+
+            return activity;
         }
     }
 }

@@ -6,6 +6,7 @@
 	scrollbar-arrow-color:#006699; 
 	scrollbar-track-color:#F1F9FF; 
 	scrollbar-darkshadow-color:#F1F9FF;
+	text-align: center;
 }
 body{
 	margin:0px;
@@ -19,7 +20,9 @@ form,ul,li{
 	list-style-type:none;
 	padding:0px;
 }
-table { empty-cells: show; border-collapse: collapse; }
+table { empty-cells: show; border-collapse: collapse;
+	text-align: center;
+}
 a{
 	color:#005eac;
 	text-decoration:none;

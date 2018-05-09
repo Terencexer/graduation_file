@@ -4,6 +4,9 @@ using System.Text;
 using DtCms.DBUtility;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
+using DtCms.Model;
+using DtCms.DAL;
 
 namespace DtCms.DAL
 {
@@ -88,6 +91,8 @@ namespace DtCms.DAL
         /// <summary>
         /// 更新一列数据
         /// </summary>
+
+
         public void UpdateField(int Id, string strValue)
         {
             StringBuilder strSql = new StringBuilder();
@@ -140,6 +145,7 @@ namespace DtCms.DAL
             }
         }
 
+
         /// <summary>
         /// 删除一条数据
         /// </summary>
@@ -188,12 +194,13 @@ namespace DtCms.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
+
         public DtCms.Model.TeamLeader GetModel(int Id)
         {
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select  top 1 Id,UserName,TureName,Team,Pwd,LeaderTel,StartTime,EndTime from dt_TeamLeader ");
-            strSql.Append(" where Id=@Id");
+            strSql.Append(" where Id='" + Id + "'");
             SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
             };
@@ -278,6 +285,37 @@ namespace DtCms.DAL
             strSql.Append(" order by " + filedOrder);
 
             return DbHelperSQL.Query(strSql.ToString());
+        }
+        public DtCms.Model.TeamLeader QueryOneRecord(string Username)
+        {
+            DtCms.Model.TeamLeader teamleader;
+
+
+            string cmdstr = "Select * From dt_TeamLeader Where UserName='" + Username + "'";
+            SqlParameter[] SqlParam = new SqlParameter[1];
+            SqlParam[0] = new SqlParameter("@Username", Username);
+
+            //获取SqlDataReader对象
+            SqlDataReader dataReader = DbHelperSQL.ExecuteReader(cmdstr, SqlParam);
+
+            if (dataReader.Read())
+            {
+                teamleader = new DtCms.Model.TeamLeader();
+                teamleader.Id = Convert.ToInt32(dataReader["Id"]);
+                teamleader.Username = dataReader["Username"].ToString();
+                teamleader.Turename = dataReader["Turename"].ToString();
+                teamleader.Team = dataReader["Team"].ToString();
+                teamleader.LeaderTel = dataReader["LeaderTel"].ToString();
+                teamleader.StartTime = Convert.ToDateTime(dataReader["StartTime"]);
+                teamleader.EndTime = Convert.ToDateTime(dataReader["EndTime"]);
+
+            }
+            else
+                teamleader = null;
+            dataReader.Close();
+
+
+            return teamleader;
         }
     }
 }

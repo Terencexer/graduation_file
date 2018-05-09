@@ -17,15 +17,31 @@ namespace DtCms.Web.Aspx
 
         protected void ActSubmit(object sender, EventArgs e)
         {  
-
+            
+          
+                  
+                  
 
             DtCms.BLL.Activity planBLL = new DtCms.BLL.Activity();
-           if (planBLL.Exists(TextBoxAID.Text.Trim()) == true)
+            if (planBLL.Exists(TextBoxAID.Text.Trim()) == true)
                ClientScript.RegisterClientScriptBlock(Page.GetType(), "", "<script>alert('该编号已被使用，请更换。')</script>");
            else
             {
-                DtCms.Model.Activity plan = new DtCms.Model.Activity();
-                plan.ActivityId = TextBoxAID.Text.Trim();
+               
+                DateTime dtDate;
+                if (DateTime.TryParse(TextBoxATime.Text, out dtDate))
+                {
+                    Console.WriteLine(dtDate);
+                }
+                else
+                {
+           
+                    throw new Exception("不是正确的日期格式类型！");
+                }
+
+               
+                 DtCms.Model.Activity plan = new DtCms.Model.Activity();
+                plan.ActivityId = TextBoxAID    .Text.Trim();
                 plan.Applicant = Session["TeamLeader"].ToString();;
                 plan.Title = TextBoxActivity.Text.Trim();
                plan.Budget = Convert.ToInt32(TextBoxBudget.Text.Trim());
@@ -38,11 +54,14 @@ namespace DtCms.Web.Aspx
                     Response.Write("<script>alert('提交成功。')</script>");
                 else
                     ClientScript.RegisterClientScriptBlock(Page.GetType(), "", "<script>alert('提交失败。')</script>");
-            }
+               
+               
+                }
            
 
         }
 
        
     }
-}
+    }
+

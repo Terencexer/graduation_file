@@ -28,3 +28,8 @@ D:\Git\graduation_file\Dtcms.Model\bin\Debug\DtCms.Model.pdb
 D:\Git\graduation_file\Dtcms.Model\obj\Debug\ResolveAssemblyReference.cache
 D:\Git\graduation_file\Dtcms.Model\obj\Debug\DtCms.Model.dll
 D:\Git\graduation_file\Dtcms.Model\obj\Debug\DtCms.Model.pdb
+E:\graduation_file8\graduation_file\Dtcms.Model\bin\Debug\DtCms.Model.dll
+E:\graduation_file8\graduation_file\Dtcms.Model\bin\Debug\DtCms.Model.pdb
+E:\graduation_file8\graduation_file\Dtcms.Model\obj\Debug\ResolveAssemblyReference.cache
+E:\graduation_file8\graduation_file\Dtcms.Model\obj\Debug\DtCms.Model.dll
+E:\graduation_file8\graduation_file\Dtcms.Model\obj\Debug\DtCms.Model.pdb

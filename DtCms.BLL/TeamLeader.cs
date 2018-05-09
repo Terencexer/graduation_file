@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using DtCms.BLL;
+using DtCms.DAL;
+using DtCms.Model;
 
 namespace DtCms.BLL
 {
@@ -51,6 +54,7 @@ namespace DtCms.BLL
             dal.UpdateField(Id, strValue);
         }
 
+
         /// <summary>
         /// 更新一条数据
         /// </summary>
@@ -59,6 +63,7 @@ namespace DtCms.BLL
 
             return dal.Update(model);
         }
+
 
         /// <summary>
         /// 删除一条数据
@@ -113,5 +118,23 @@ namespace DtCms.BLL
         {
             return dal.GetPageList(pageSize, currentPage, strWhere, filedOrder);
         }
+
+        public DtCms.Model.TeamLeader QueryTeacher(string Username)
+        {
+            return dal.QueryOneRecord(Username);
+        }
+
+        public string GetAppName(string Username)
+        {
+            DtCms.Model.TeamLeader teacher = dal.QueryOneRecord(Username);
+            if (teacher != null)
+                return teacher.Turename;
+            return null;
+            //return (dal.QueryOneRecord(Username)).Turename;
+
+
+        }
+
+
     }
 }

@@ -22,6 +22,15 @@ namespace DtCms.Web.Aspx {
         protected global::System.Web.UI.HtmlControls.HtmlForm comment_form;
         
         /// <summary>
+        /// RadioButtonListRole 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListRole;
+        
+        /// <summary>
         /// txtUserName 控件。
         /// </summary>
         /// <remarks>
@@ -47,15 +56,6 @@ namespace DtCms.Web.Aspx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCode;
-        
-        /// <summary>
-        /// RadioButtonListRole 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListRole;
         
         /// <summary>
         /// btnSubmit 控件。

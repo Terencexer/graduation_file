@@ -33,6 +33,7 @@
 			<li onclick="tabs(1);"><a href="Article/List.aspx" target="sysMain"><span>资讯模块</span></a></li>
 			<li onclick="tabs(2);"><a href="Feedback/List.aspx" target="sysMain"><span>互动管理</span></a></li>
 			<li onclick="tabs(3);"><a href="Admin_center.aspx" target="sysMain"><span>系统管理</span></a></li>
+            <li onclick="tabs(4);"><a href="Activity/ActivityAudit.aspx" target="sysMain"><span>活动管理</span></a></li>
           </ul>
           </div>
 
@@ -47,7 +48,7 @@
         <asp:LinkButton 
             ID="lbtnExit" runat="server" onclick="lbtnExit_Click">安全退出</asp:LinkButton>
         </div>
-    <div style="padding-left:20px;line-height:20px;background:url(images/siteico.gif) 0px 0px no-repeat;">当前登录用户：<font color="#FF0000"><asp:Label
+        <div style="padding-left:20px;line-height:20px;background:url(images/siteico.gif) 0px 0px no-repeat; text-align: left;">当前登录用户：<font color="#FF0000"><asp:Label
         ID="lblAdminName" runat="server" Text="Label"></asp:Label></font>您好，欢迎光临。</div>
     </td>
   </tr>
@@ -93,7 +94,11 @@
             <li><a target="sysMain" href="Manage/List.aspx">管理员管理</a></li>
           </ul>
         </div>
-        
+        <div class="left_menu">
+          <ul>
+            <li><a href="Activity/ActivityAudit.aspx" target="sysMain">活动审批</a></li>
+          </ul>
+        </div>
       </div>
 	</td>
 	<td valign="middle" style="width:8px;background:url(images/main_cen_bg.gif) repeat-x;">

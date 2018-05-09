@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-    <title>社团评分管理</title>
+    <title>活动评分管理</title>
     <link rel="stylesheet" type="text/css" href="../images/style.css" />
     <link href="../../css/pagination.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../js/jquery-1.3.2.min.js"></script>
@@ -43,14 +43,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="navigation"><b>您当前的位置：首页 &gt; 社团评分管理 &gt; 社团评分列表</b></div>
+    <div class="navigation"><b>您当前的位置：首页 &gt; 晚会评分管理 &gt; 晚会评分列表</b></div>
     <div class="spClear"></div>
     <asp:Repeater ID="rptList" runat="server">
     <HeaderTemplate>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
       <tr>
         <th width="10%">名次</th>
-        <th width="18%">社团名</th>
+        <th width="18%">活动名</th>
         <th width="18%">活动质量总分</th>
         <th width="18%">活动次数总分</th>
         <th width="18%">活动气氛总分</th>
