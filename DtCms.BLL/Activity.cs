@@ -43,6 +43,18 @@ namespace DtCms.BLL
         {
             dal.UpdateField(Id, strValue);
         }
+        public void UpdateFieldPreparation(String Id, string strValue)
+        {
+            dal.UpdateFieldPreparation(Id, strValue);
+        }
+        public void UpdateFieldMid(String Id, string strValue)
+        {
+            dal.UpdateFieldMid(Id, strValue);
+        }
+        public void UpdateFieldLastPre(String Id, string strValue)
+        {
+            dal.UpdateFieldLastPre(Id, strValue);
+        }
 
         /// <summary>
         /// 更新一条数据
@@ -89,6 +101,18 @@ namespace DtCms.BLL
         public void UpdateOneRecordAuditStatusUncheck(string ActivityId)
         {
             dal.UpdateOneRecordAuditStatus(ActivityId, "不批准");
+        }
+        public void ReupdateOneRecordAuditStatus(string ActivityId)
+        {
+            dal.UpdateOneRecordAuditStatus(ActivityId, "未审核");
+        }
+        public void UpdateOneRecordTicketStatus(string ActivityId)
+        {
+            dal.UpdateOneRecordTicketStatus(ActivityId, "发布中");
+        }
+        public void UpdateOneRecordTicketStatusCancel(string ActivityId)
+        {
+            dal.UpdateOneRecordTicketStatus(ActivityId, "未发布");
         }
         public DtCms.Model.Activity QueryActivity(string ActivityId)
         {

@@ -59,7 +59,7 @@
                     AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
                     BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
                     DataSourceID="SqlDataSource1" GridLines="Vertical" Height="159px" 
-                    onrowdatabound="GridView1_RowDataBound" PageSize="15" Width="900px" 
+                    onrowdatabound="GridView1_RowDataBound" Width="1000px" 
                     onrowcommand="GridView1_RowCommand">
                     <AlternatingRowStyle BackColor="Gainsboro" />
                     <Columns>
@@ -74,10 +74,20 @@
                                 <asp:Label ID="LabelApplicant" runat="server" Text='<%# Bind("Applicant") %>'></asp:Label>
                             </ItemTemplate>
                            
+                            <HeaderStyle Width="50px" />
+                           
                         </asp:TemplateField>
                         <asp:BoundField DataField="Budget" HeaderText="活动预算" />
                         <asp:BoundField DataField="AConten" HeaderText="活动策划" />
-                        <asp:BoundField DataField="ATime" HeaderText="活动时间" SortExpression="ATime" />
+                        <asp:TemplateField HeaderText="活动时间" SortExpression="ATime">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("ATime") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="LabelTime" runat="server" Text='<%# Bind("ATime") %>'></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Width="150px" />
+                        </asp:TemplateField>
                         <asp:BoundField DataField="Place" HeaderText="活动地点" SortExpression="Place" />
                         <asp:TemplateField HeaderText="审核状态" SortExpression="CheckStatus">
                             <EditItemTemplate>
@@ -86,7 +96,9 @@
                             <ItemTemplate>
                                 <asp:Label ID="LabelAudit" runat="server" Text='<%# Bind("CheckStatus") %>'></asp:Label>
                             </ItemTemplate>
+                            <HeaderStyle Width="80px" />
                         </asp:TemplateField>
+                       
                         <asp:TemplateField HeaderText="审核" ShowHeader="False">
                             <ItemTemplate>
                                 <asp:Button ID="ButtonAudit" runat="server" 
@@ -114,6 +126,22 @@
                                     CommandArgument="<%#Container.DataItemIndex%>" CommandName="ButtonEdit" 
                                     Text="修改" />
                             </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="发布" ShowHeader="False">
+                            <ItemTemplate>
+                                <asp:Button ID="ButtonIssue" runat="server" 
+                                    CommandArgument="<% #Container.DataItemIndex %>" CommandName="ButtonIssue" 
+                                    Text="发布" />
+                            </ItemTemplate>
+                            <HeaderStyle Width="50px" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="发布2" ShowHeader="False">
+                            <ItemTemplate>
+                                <asp:Button ID="ButtonIssueCancel" runat="server" 
+                                    CommandArgument="<% #Container.DataItemIndex %>" 
+                                    CommandName="ButtonIssueCancel" Text="取消" />
+                            </ItemTemplate>
+                            <HeaderStyle Width="50px" />
                         </asp:TemplateField>
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
@@ -212,16 +240,17 @@
                                 <asp:TextBox ID="TextBoxTicketNum" runat="server"></asp:TextBox>
                             </td>
                             <td class="style16" bgcolor="White">
-                            </td>
+                                发票情况：</td>
                             <td class="style25" bgcolor="White">
-                                &nbsp;</td>
+                                <asp:TextBox ID="TextBoxTicketIssue" runat="server" ReadOnly="true"></asp:TextBox>
+                            </td>
                         </tr>
                       
                         <tr>
                             <td class="style11" bgcolor="White">
                                 策划内容：</td>
                             <td colspan="3" bgcolor="White">
-                                <asp:TextBox ID="TextBoxAcontent" runat="server" Height="131px" Width="532px"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxAcontent" runat="server" Height="131px" Width="532px" maxlength="3000"></asp:TextBox>
                             </td>
                             
                         </tr>

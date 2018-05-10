@@ -61,7 +61,7 @@ namespace DtCms.Web.Aspx
 
             DtCms.BLL.Score bll = new DtCms.BLL.Score();
             bll.Add(score);
-            Response.Write("<script>alert('社团评分成功啦！');</script>");
+            Response.Write("<script>alert('艺术团活动评分成功啦！');</script>");
         }
     }
 }

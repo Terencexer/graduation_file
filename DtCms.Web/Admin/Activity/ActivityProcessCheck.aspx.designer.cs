@@ -10,7 +10,7 @@
 namespace DtCms.Web.Admin.Activity {
     
     
-    public partial class ActivityAudit {
+    public partial class ActivityProcessCheck {
         
         /// <summary>
         /// Head1 控件。
@@ -49,147 +49,93 @@ namespace DtCms.Web.Admin.Activity {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// HiddenFieldEdit 控件。
+        /// HiddenFieldCheck 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenFieldEdit;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenFieldCheck;
         
         /// <summary>
-        /// PanelEdit 控件。
+        /// PanelPre 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelEdit;
+        protected global::System.Web.UI.WebControls.Panel PanelPre;
         
         /// <summary>
-        /// Div1 控件。
+        /// TextBoxPre 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPre;
         
         /// <summary>
-        /// TextBoxActivityId 控件。
+        /// Button2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxActivityId;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// TextBoxApplicant 控件。
+        /// PanelMiddle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxApplicant;
+        protected global::System.Web.UI.WebControls.Panel PanelMiddle;
         
         /// <summary>
-        /// TextBoxTitle 控件。
+        /// TextBoxMiddle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTitle;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxMiddle;
         
         /// <summary>
-        /// TextBoxBudget 控件。
+        /// Button4 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxBudget;
+        protected global::System.Web.UI.WebControls.Button Button4;
         
         /// <summary>
-        /// TextBoxATime 控件。
+        /// PanelEve 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxATime;
+        protected global::System.Web.UI.WebControls.Panel PanelEve;
         
         /// <summary>
-        /// TextBoxPlace 控件。
+        /// TextBoxEve 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPlace;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEve;
         
         /// <summary>
-        /// TextBoxCheckStatus 控件。
+        /// Button6 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCheckStatus;
-        
-        /// <summary>
-        /// DropDownListTicketType 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListTicketType;
-        
-        /// <summary>
-        /// TextBoxTicketNum 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTicketNum;
-        
-        /// <summary>
-        /// TextBoxTicketIssue 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTicketIssue;
-        
-        /// <summary>
-        /// TextBoxAcontent 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxAcontent;
-        
-        /// <summary>
-        /// ButtonEditSub 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEditSub;
-        
-        /// <summary>
-        /// ButtonReturn 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonReturn;
+        protected global::System.Web.UI.WebControls.Button Button6;
     }
 }

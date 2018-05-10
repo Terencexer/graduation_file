@@ -45,7 +45,7 @@
 <div class="container">
 	
     <div class="clear" style="height:20px;"></div>
-	<div class="bread_crumbs"><a href="<%=URLRewrite("index", "")%>">首页</a> &gt; <a href="<%=URLRewrite("societies", "")%>">社团评选</a> 
+	<div class="bread_crumbs"><a href="<%=URLRewrite("index", "")%>">首页</a> &gt; <a href="<%=URLRewrite("societies", "")%>">活动评分</a> 
 		<div class="right_function_key"></div>
 	</div>
 	<!-- ===== 左侧正文 ===== -->

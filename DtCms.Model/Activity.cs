@@ -21,6 +21,7 @@ namespace DtCms.Model
         public int TicketNum { get; set; }
         public DateTime ATime { get; set; }
         private DateTime _addtime = DateTime.Now;
+        public string TicketStatus  { get; set; }
 
         public DateTime AddTime
         {

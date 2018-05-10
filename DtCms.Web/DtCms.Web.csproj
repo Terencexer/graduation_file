@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Activity\ActivityAudit.aspx" />
+    <Content Include="Admin\Activity\ActivityProcessCheck.aspx" />
+    <Content Include="Aspx\ActivityProcess.aspx" />
+    <Content Include="Aspx\AppliRecord.aspx" />
     <Content Include="Aspx\Tacvitity_apply.aspx" />
     <Content Include="Aspx\Tfeedback.aspx" />
     <Content Include="Aspx\Tindex.aspx" />
@@ -108,6 +111,13 @@
     </Compile>
     <Compile Include="Admin\Activity\ActivityAudit.aspx.designer.cs">
       <DependentUpon>ActivityAudit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Activity\ActivityProcessCheck.aspx.cs">
+      <DependentUpon>ActivityProcessCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Activity\ActivityProcessCheck.aspx.designer.cs">
+      <DependentUpon>ActivityProcessCheck.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Admin_Center.aspx.cs">
       <DependentUpon>Admin_Center.aspx</DependentUpon>
@@ -297,6 +307,20 @@
     </Compile>
     <Compile Include="Admin\Societies\Score.aspx.designer.cs">
       <DependentUpon>Score.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspx\ActivityProcess.aspx.cs">
+      <DependentUpon>ActivityProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\ActivityProcess.aspx.designer.cs">
+      <DependentUpon>ActivityProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspx\AppliRecord.aspx.cs">
+      <DependentUpon>AppliRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\AppliRecord.aspx.designer.cs">
+      <DependentUpon>AppliRecord.aspx</DependentUpon>
     </Compile>
     <Compile Include="Aspx\article.aspx.cs">
       <DependentUpon>article.aspx</DependentUpon>
