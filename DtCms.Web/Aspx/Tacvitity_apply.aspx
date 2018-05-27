@@ -6,7 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>浙江财经大学校艺术团学生组织管理系统</title>
-<!--<link rel="shortcut icon" href="<%=SiteConfig.WebPath
+<!--<link rel="shortcut icon" href="<%=SiteConfig.WebPath
+
 %>favicon.ico" mce_href="<%=SiteConfig.WebPath%>favicon.ico" type="image/x-icon"> -->
   <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> 
   <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
@@ -47,7 +48,6 @@ li:hover .sub_menue
 </head>
 <body>
 
-
 <div class="top">
 	<!-- ===== 导航 ===== -->
 	<ul class="nav">
@@ -81,15 +81,13 @@ li:hover .sub_menue
     <div class="commentform">
 				<div class="nTitle">提交策划</div>
 				<form id="comment_form" runat="server">
+                
                 <dl>    
                 
 						<dt>活动ID：</dt>
 						<dd>
-                            <asp:TextBox ID="TextBoxAID" runat="server" ></asp:TextBox>
-                            <asp:Label ID="Label1" runat="server" 
-                                Text="活动日期+活动名称缩写，如2018年4月10日音乐专场：20180410yyzc"></asp:Label>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                ControlToValidate="TextBoxAID" Display="Dynamic" ErrorMessage="编号不能为空"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="TextBoxAID" runat="server" ReadOnly="true" BackColor="Silver" ></asp:TextBox>
+                           
                         </dd>
 					</dl>
 					<dl>
@@ -104,6 +102,12 @@ li:hover .sub_menue
                             <asp:TextBox ID="TextBoxActivity" runat="server"></asp:TextBox>
                         </dd>
 					</dl>
+                    <dl>
+						<dt>活动缩写：</dt>
+						<dd>
+                            <asp:TextBox ID="TextBoxActivitySim" runat="server"></asp:TextBox>
+                        </dd>
+					</dl>
 					<dl>
 						<dt>预算：</dt>
 						<dd>
@@ -113,18 +117,38 @@ li:hover .sub_menue
                                 ValidationExpression="^\+?[1-9][0-9]*$"></asp:RegularExpressionValidator>
                         </dd>
 					</dl>
-					<dl>
-						<dt>时间：</dt>
+					 <dl>    
+                
+						<dt>活动开始时间：</dt>
 						<dd>
-                            <asp:TextBox ID="TextBoxATime" runat="server"></asp:TextBox>
-                            <asp:Label ID="Label2" runat="server" 
-                                Text="格式为“XXXX-XX-XX XX:XX&quot;,如”2018-5-20 18:30&quot;"></asp:Label>
+                           <input type="text" id="test5" runat=server>
+<script src="./layDate-v5.0.9/layDate-v5.0.9/laydate/laydate.js"></script> <!-- 改成你的路径 -->
+<script>
+    //执行一个laydate实例
+    laydate.render({
+        elem: '#test5' //指定元素
+ , type: 'datetime'
+    });
+</script>
                         </dd>
 					</dl>
                     <dl>
 						<dt>地点：</dt>
 						<dd>
-                            <asp:TextBox ID="TextBoxAPlace" runat="server"></asp:TextBox>
+                            <asp:DropDownList ID="DropDownAPlace" runat="server">
+                                <asp:ListItem>学术一报</asp:ListItem>
+                                <asp:ListItem>学术二报</asp:ListItem>
+                                <asp:ListItem>学术四报</asp:ListItem>
+                                <asp:ListItem>学术多功能厅</asp:ListItem>
+                                <asp:ListItem>油桶剧场</asp:ListItem>
+                                <asp:ListItem>文化长廊</asp:ListItem>
+                                <asp:ListItem>教室</asp:ListItem>
+                                <asp:ListItem>油桶307</asp:ListItem>
+                                <asp:ListItem>油桶多功能厅</asp:ListItem>
+                                <asp:ListItem>油桶外场</asp:ListItem>
+                                <asp:ListItem>体育馆外场</asp:ListItem>
+                                <asp:ListItem>体育馆</asp:ListItem>
+                            </asp:DropDownList>
                         </dd>
 					</dl>
 					<dl>

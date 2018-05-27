@@ -19,7 +19,10 @@ namespace DtCms.BLL
         {
             return dal.Exists(Id);
         }
-
+        public bool AcExists(DateTime Atime, string Aplace)
+        {
+            return dal.AcExists(Atime, Aplace);
+        }
         /// <summary>
         /// 返回数据总数(分页用到)
         /// </summary>

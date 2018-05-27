@@ -23,6 +23,18 @@ namespace DtCms.DAL
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
+        public bool AcExists(DateTime Atime,string Aplace)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from dt_TacvitityApply");
+            strSql.Append(" where ATime= '" + Atime + "'" + "AND Place='" + Aplace+"'");
+            SqlParameter[] parameters = {
+					new SqlParameter("@ATime", SqlDbType.DateTime,20)};
+            parameters[0].Value = Atime;
+           
+
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+        }
 
         /// <summary>
         /// 返回数据总数(分页用到)

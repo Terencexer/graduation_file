@@ -33,6 +33,16 @@ li:hover .sub_menue
         clear:both;
     }
 
+    .style1
+    {
+        clear: both;
+        font-size: xx-large;
+    }
+    .style2
+    {
+        font-size: xx-large;
+    }
+
 </style>   
 </head>
 <body>
@@ -66,10 +76,13 @@ li:hover .sub_menue
 <!-- ===== 正文内容 ===== -->
 <div class="container">
 	
-    <div class="clear" style="height:20px;"></div>
-
+    <div class="style1" style="height:20px;"></div>
+    <div class="style2">
+    
+    
+        活动提交记录</div>
 	<!-- ===== 横幅首页图片 ===== -->
-	<div class="banner"><script type="text/javascript" src="/Tools/Advert_js.ashx?id=2"></script></div>
+	<div ><script type="text/javascript" src="/Tools/Advert_js.ashx?id=2"></script></div>
 	<div >
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" 

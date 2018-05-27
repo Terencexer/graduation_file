@@ -31,24 +31,6 @@ namespace DtCms.Web.Aspx {
         protected global::System.Web.UI.WebControls.TextBox TextBoxAID;
         
         /// <summary>
-        /// Label1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
-        /// <summary>
         /// TextBoxApplicant 控件。
         /// </summary>
         /// <remarks>
@@ -65,6 +47,15 @@ namespace DtCms.Web.Aspx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxActivity;
+        
+        /// <summary>
+        /// TextBoxActivitySim 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxActivitySim;
         
         /// <summary>
         /// TextBoxBudget 控件。
@@ -85,31 +76,22 @@ namespace DtCms.Web.Aspx {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
-        /// TextBoxATime 控件。
+        /// test5 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxATime;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText test5;
         
         /// <summary>
-        /// Label2 控件。
+        /// DropDownAPlace 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// TextBoxAPlace 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxAPlace;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownAPlace;
         
         /// <summary>
         /// TextBoxAudMode 控件。

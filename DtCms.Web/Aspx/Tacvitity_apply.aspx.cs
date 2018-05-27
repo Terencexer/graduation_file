@@ -23,13 +23,13 @@ namespace DtCms.Web.Aspx
                   
 
             DtCms.BLL.Activity planBLL = new DtCms.BLL.Activity();
-            if (planBLL.Exists(TextBoxAID.Text.Trim()) == true)
-               ClientScript.RegisterClientScriptBlock(Page.GetType(), "", "<script>alert('该编号已被使用，请更换。')</script>");
+            if (planBLL.AcExists(Convert.ToDateTime(Request.Form["test5"]), DropDownAPlace.SelectedValue.Trim()) == true)
+               ClientScript.RegisterClientScriptBlock(Page.GetType(), "", "<script>alert('该时间地点已被使用，请更换。')</script>");
            else
             {
                
                 DateTime dtDate;
-                if (DateTime.TryParse(TextBoxATime.Text, out dtDate))
+                if (DateTime.TryParse(Request.Form["test5"], out dtDate))
                 {
                     Console.WriteLine(dtDate);
                 }
@@ -40,13 +40,13 @@ namespace DtCms.Web.Aspx
                 }
 
                
-                 DtCms.Model.Activity plan = new DtCms.Model.Activity();
-                plan.ActivityId = TextBoxAID    .Text.Trim();
-                plan.Applicant = Session["TeamLeader"].ToString();;
+                DtCms.Model.Activity plan = new DtCms.Model.Activity();
+                plan.ActivityId = TextBoxActivitySim.Text.Trim() + DateTime.Now.ToString("yyyyMMdd")+Session["TeamLeader"].ToString();
+                plan.Applicant = Session["TeamLeader"].ToString();
                 plan.Title = TextBoxActivity.Text.Trim();
                plan.Budget = Convert.ToInt32(TextBoxBudget.Text.Trim());
-                plan.ATime = Convert.ToDateTime(TextBoxATime.Text);
-                plan.Place = TextBoxAPlace.Text.Trim();
+               plan.ATime = Convert.ToDateTime(Request.Form["test5"]);
+               plan.Place = DropDownAPlace.SelectedValue.Trim();
                 plan.AConten = Request.Form["txtAContent"];
                 plan.CheckStatus = TextBoxAudMode.Text;
                 int result = planBLL.Add(plan);

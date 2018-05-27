@@ -49,6 +49,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
@@ -60,11 +61,18 @@
   <ItemGroup>
     <Content Include="Admin\Activity\ActivityAudit.aspx" />
     <Content Include="Admin\Activity\ActivityProcessCheck.aspx" />
+    <Content Include="Admin\Activity\ActivityReport.aspx" />
+    <Content Include="Admin\Images\Pie.jpg" />
     <Content Include="Aspx\ActivityProcess.aspx" />
     <Content Include="Aspx\AppliRecord.aspx" />
+    <Content Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\laydate\laydate.js" />
+    <Content Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\laydate\theme\default\laydate.css" />
+    <Content Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\test.html" />
     <Content Include="Aspx\Tacvitity_apply.aspx" />
     <Content Include="Aspx\Tfeedback.aspx" />
     <Content Include="Aspx\Tindex.aspx" />
+    <Content Include="bin\DtCms.Web.dll" />
+    <Content Include="bin\DtCms.Web.pdb" />
     <Content Include="Css\custom-theme\images\ui-bg_diagonals-medium_20_423e3e_40x40.png" />
     <Content Include="Css\custom-theme\images\ui-bg_flat_0_564e4e_40x100.png" />
     <Content Include="Css\custom-theme\images\ui-bg_flat_0_6b97c1_40x100.png" />
@@ -118,6 +126,13 @@
     </Compile>
     <Compile Include="Admin\Activity\ActivityProcessCheck.aspx.designer.cs">
       <DependentUpon>ActivityProcessCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Activity\ActivityReport.aspx.cs">
+      <DependentUpon>ActivityReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Activity\ActivityReport.aspx.designer.cs">
+      <DependentUpon>ActivityReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Admin_Center.aspx.cs">
       <DependentUpon>Admin_Center.aspx</DependentUpon>
@@ -773,6 +788,14 @@
     <Content Include="Tools\Download.ashx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\laydate\theme\default\font\iconfont.eot" />
+    <None Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\laydate\theme\default\font\iconfont.svg" />
+    <None Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\laydate\theme\default\font\iconfont.ttf" />
+    <None Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\laydate\theme\default\font\iconfont.woff" />
+    <None Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\文档\官网.url" />
+    <None Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\文档\文档.url" />
+    <None Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\文档\社区.url" />
+    <None Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\更新日志.url" />
     <None Include="Images\library\Thumbs.db" />
     <None Include="Images\library\vssver2.scc" />
     <Content Include="Admin\Member\List.aspx" />
