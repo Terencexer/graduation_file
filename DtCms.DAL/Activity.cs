@@ -58,9 +58,9 @@ namespace DtCms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into dt_TacvitityApply(");
-            strSql.Append("ActivityId,Applicant,Title,Budget,ATime,AConten,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,TicketNum,TicketType,TicketStatus)");
+            strSql.Append("ActivityId,Applicant,Title,Budget,ATime,AConten,AInTrodatction,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,SuperVIPNum,VIPNum,CommonNum,StandingNum,TicketStatus)");
             strSql.Append(" values (");
-            strSql.Append("@ActivityId,@Applicant,@Title,@Budget,@ATime,@AConten,@Place,@AddTime,@CheckStatus,@Preparation,@Middle,@LastPre,@TicketNum,@TicketType,@TicketStatus)");
+            strSql.Append("@ActivityId,@Applicant,@Title,@Budget,@ATime,@AConten,@AInTrodatction,@Place,@AddTime,@CheckStatus,@Preparation,@Middle,@LastPre,,@SuperVIPNum,,@VIPNum,,@CommonNum,,@StandingNum,@TicketStatus)");
 
             SqlParameter[] parameters = {
 					new SqlParameter("@ActivityId", SqlDbType.VarChar,20),
@@ -69,6 +69,7 @@ namespace DtCms.DAL
 					new SqlParameter("@Budget", SqlDbType.Int),
 					new SqlParameter("@ATime", SqlDbType.DateTime),
 					new SqlParameter("@AConten", SqlDbType.NText),
+                    new SqlParameter("@AInTrodatction", SqlDbType.NText),
 					new SqlParameter("@Place", SqlDbType.NVarChar,50),
 				
 					new SqlParameter("@AddTime", SqlDbType.DateTime),
@@ -76,8 +77,10 @@ namespace DtCms.DAL
                     new SqlParameter("@Preparation", SqlDbType.NText),
                     new SqlParameter("@Middle", SqlDbType.NText),
                     new SqlParameter("@LastPre", SqlDbType.NText),
-                    new SqlParameter("@TicketNum", SqlDbType.Int),
-                    new SqlParameter("@TicketType", SqlDbType.NVarChar,50),
+                    new SqlParameter("@SuperVIPNum", SqlDbType.Int),
+                    new SqlParameter("@VIPNum", SqlDbType.Int),
+                     new SqlParameter("@CommonNum", SqlDbType.Int),
+                      new SqlParameter("@StandingNum", SqlDbType.Int),
                   new SqlParameter("@TicketStatus", SqlDbType.NVarChar,50)};
                    parameters[0].Value = model.ActivityId;
                    parameters[1].Value = model.Applicant;
@@ -85,15 +88,18 @@ namespace DtCms.DAL
             parameters[3].Value = model.Budget;
             parameters[4].Value = model.ATime;
             parameters[5].Value = model.AConten;
-            parameters[6].Value = model.Place;
-            parameters[7].Value = model.AddTime;
-            parameters[8].Value = model.CheckStatus;
-            parameters[9].Value = model.Preparation;
-            parameters[10].Value = model.Middle;
-            parameters[11].Value = model.LastPre;
-            parameters[12].Value = model.TicketNum;
-            parameters[13].Value = model.TicketType;
-             parameters[14].Value = model.TicketStatus;
+            parameters[6].Value = model.AInTrodatction;
+            parameters[7].Value = model.Place;
+            parameters[8].Value = model.AddTime;
+            parameters[9].Value = model.CheckStatus;
+            parameters[10].Value = model.Preparation;
+            parameters[11].Value = model.Middle;
+            parameters[12].Value = model.LastPre;
+            parameters[13].Value = model.SuperVIPNum;
+            parameters[14].Value = model.VIPNum;
+            parameters[15].Value = model.CommonNum;
+            parameters[16].Value = model.StandingNum;
+             parameters[17].Value = model.TicketStatus;
 
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)
@@ -145,44 +151,48 @@ namespace DtCms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into dt_TacvitityApply(");
-            strSql.Append("ActivityId,Applicant,Title,Budget,ATime,AConten,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,TicketNum,TicketType,TicketStatus)");
+            strSql.Append("ActivityId,Applicant,Title,Budget,ATime,AConten,AInTrodatction,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,SuperVIPNum,VIPNum,CommonNum,StandingNum,TicketStatus)");
             strSql.Append(" values (");
-            strSql.Append("@ActivityId,@Applicant,@Title,@Budget,@ATime,@AConten,@Place,@AddTime,@CheckStatus,@Preparation,@Middle,@LastPre,@TicketNum,@TicketType,@TicketStatus)");
+            strSql.Append("@ActivityId,@Applicant,@Title,@Budget,@ATime,@AConten,@AInTrodatction,@Place,@AddTime,@CheckStatus,@Preparation,@Middle,@LastPre,,@SuperVIPNum,,@VIPNum,,@CommonNum,,@StandingNum,@TicketStatus)");
 
             SqlParameter[] parameters = {
-					new SqlParameter("@ActivityId", SqlDbType.NVarChar,20),
+					new SqlParameter("@ActivityId", SqlDbType.VarChar,20),
 					new SqlParameter("@Applicant", SqlDbType.NVarChar,20),
 					new SqlParameter("@Title", SqlDbType.NVarChar,50),
 					new SqlParameter("@Budget", SqlDbType.Int),
 					new SqlParameter("@ATime", SqlDbType.DateTime),
 					new SqlParameter("@AConten", SqlDbType.NText),
+                    new SqlParameter("@AInTrodatction", SqlDbType.NText),
 					new SqlParameter("@Place", SqlDbType.NVarChar,50),
-					
+				
 					new SqlParameter("@AddTime", SqlDbType.DateTime),
                    new SqlParameter("@CheckStatus", SqlDbType.NVarChar,100),
                     new SqlParameter("@Preparation", SqlDbType.NText),
                     new SqlParameter("@Middle", SqlDbType.NText),
                     new SqlParameter("@LastPre", SqlDbType.NText),
-                    new SqlParameter("@TicketNum", SqlDbType.Int),
-                    new SqlParameter("@TicketType", SqlDbType.NVarChar,50),
-                    new SqlParameter("@TicketStatus", SqlDbType.NVarChar,50),
-        };
+                    new SqlParameter("@SuperVIPNum", SqlDbType.Int),
+                    new SqlParameter("@VIPNum", SqlDbType.Int),
+                     new SqlParameter("@CommonNum", SqlDbType.Int),
+                      new SqlParameter("@StandingNum", SqlDbType.Int),
+                  new SqlParameter("@TicketStatus", SqlDbType.NVarChar,50)};
             parameters[0].Value = model.ActivityId;
             parameters[1].Value = model.Applicant;
             parameters[2].Value = model.Title;
             parameters[3].Value = model.Budget;
             parameters[4].Value = model.ATime;
             parameters[5].Value = model.AConten;
-            parameters[6].Value = model.Place;
-
-            parameters[7].Value = model.AddTime;
-            parameters[8].Value = model.CheckStatus;
-            parameters[9].Value = model.Preparation;
-            parameters[10].Value = model.Middle;
-            parameters[11].Value = model.LastPre;
-            parameters[12].Value = model.TicketNum;
-            parameters[13].Value = model.TicketType;
-             parameters[14].Value = model.TicketStatus;
+            parameters[6].Value = model.AInTrodatction;
+            parameters[7].Value = model.Place;
+            parameters[8].Value = model.AddTime;
+            parameters[9].Value = model.CheckStatus;
+            parameters[10].Value = model.Preparation;
+            parameters[11].Value = model.Middle;
+            parameters[12].Value = model.LastPre;
+            parameters[13].Value = model.SuperVIPNum;
+            parameters[14].Value = model.VIPNum;
+            parameters[15].Value = model.CommonNum;
+            parameters[16].Value = model.StandingNum;
+            parameters[17].Value = model.TicketStatus;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -246,7 +256,7 @@ namespace DtCms.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select ActivityId,Applicant,Title,Budget,ATime,AConten,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,TicketNum,TicketType,TicketStatus ");
+            strSql.Append("select ActivityId,Applicant,Title,Budget,ATime,AConten,AInTrodatction,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,SuperVIPNum,VIPNum,CommonNum,StandingNum,TicketStatus ");
             strSql.Append(" FROM dt_TacvitityApply ");
             if (strWhere.Trim() != "")
             {
@@ -293,14 +303,17 @@ namespace DtCms.DAL
                 activity.ATime = Convert.ToDateTime(dataReader["ATime"].ToString());
                 activity.AddTime = Convert.ToDateTime(dataReader["AddTime"].ToString());
                 activity.AConten = dataReader["AConten"].ToString();
+                activity.AInTrodatction = dataReader["AInTrodatction"].ToString();
                 activity.Place = dataReader["Place"].ToString();
                 activity.CheckStatus = dataReader["CheckStatus"].ToString();
                 activity.Preparation = dataReader["Preparation"].ToString();
                 activity.Middle = dataReader["Middle"].ToString();
                 activity.LastPre = dataReader["LastPre"].ToString();
-                activity.TicketNum = Convert.ToInt32(dataReader["TicketNum"]);
-
-                activity.TicketType = dataReader["TicketType"].ToString();
+                activity.SuperVIPNum = Convert.ToInt32(dataReader["SuperVIPNum"]);
+                activity.VIPNum = Convert.ToInt32(dataReader["VIPNum"]);
+                activity.CommonNum = Convert.ToInt32(dataReader["CommonNum"]);
+                activity.StandingNum = Convert.ToInt32(dataReader["StandingNum"]);
+               
                 activity.TicketStatus = dataReader["TicketStatus"].ToString();
                 if (dataReader["Preparation"] is System.DBNull)
                 {

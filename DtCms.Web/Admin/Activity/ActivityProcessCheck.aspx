@@ -64,8 +64,6 @@
                 <asp:BoundField DataField="Place" SortExpression="Place" />
                 <asp:BoundField DataField="CheckStatus" HeaderText="审核状态" 
                     SortExpression="CheckStatus" />
-                <asp:BoundField DataField="TicketNum" HeaderText="发票数目" />
-                <asp:BoundField DataField="TicketType" HeaderText="门票类型" />
                 <asp:BoundField DataField="TicketStatus" HeaderText="发票状态" 
                     SortExpression="TicketStatus" />
                 <asp:TemplateField HeaderText="活动状态">
@@ -107,7 +105,7 @@
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:DtCmsdbConnectionAudit %>" 
-            SelectCommand="SELECT [ActivityId], [Applicant], [Title], [Budget], [ATime], [Place], [CheckStatus], [TicketNum], [TicketType], [TicketStatus] FROM [dt_TacvitityApply] WHERE ([CheckStatus] = @CheckStatus)">
+            SelectCommand="SELECT [ActivityId], [Applicant], [Title], [Budget], [ATime], [Place], [CheckStatus], [TicketStatus] FROM [dt_TacvitityApply] WHERE ([CheckStatus] = @CheckStatus)">
             <SelectParameters>
                 <asp:Parameter DefaultValue="审核通过" Name="CheckStatus" Type="String" />
             </SelectParameters>

@@ -80,7 +80,7 @@ namespace DtCms.Web.Aspx
                 // DropDownListTicketType.Text = activity.QueryActivity(activityId).TicketType.ToString();   
                 TextBoxTitle.Text = activity.QueryActivity(activityId).Title;
                 TextBoxAcontent.Text = activity.QueryActivity(activityId).AConten.ToString();
-                TextBoxTicketNum.Text = activity.QueryActivity(activityId).TicketType.ToString();
+               
                 TextBoxTicketIssue.Text = activity.QueryActivity(activityId).TicketStatus.ToString();
 
             }

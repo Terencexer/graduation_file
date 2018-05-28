@@ -51,7 +51,7 @@
     <table class="style1">
         <tr>
             <td align="center" class="style2" >
-                活动审批</td>
+                活动审批 </td>
         </tr>
         <tr>
             <td align="center">
@@ -126,22 +126,6 @@
                                     CommandArgument="<%#Container.DataItemIndex%>" CommandName="ButtonEdit" 
                                     Text="修改" />
                             </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="发布" ShowHeader="False">
-                            <ItemTemplate>
-                                <asp:Button ID="ButtonIssue" runat="server" 
-                                    CommandArgument="<% #Container.DataItemIndex %>" CommandName="ButtonIssue" 
-                                    Text="发布" />
-                            </ItemTemplate>
-                            <HeaderStyle Width="50px" />
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="发布2" ShowHeader="False">
-                            <ItemTemplate>
-                                <asp:Button ID="ButtonIssueCancel" runat="server" 
-                                    CommandArgument="<% #Container.DataItemIndex %>" 
-                                    CommandName="ButtonIssueCancel" Text="取消" />
-                            </ItemTemplate>
-                            <HeaderStyle Width="50px" />
                         </asp:TemplateField>
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
@@ -222,29 +206,12 @@
                                 <asp:TextBox ID="TextBoxCheckStatus" runat="server" ReadOnly="True" BackColor="Silver" ></asp:TextBox>
                             </td>
                             <td class="style18" bgcolor="White">
-                                门票类型：</td>
-                            <td class="style27" bgcolor="White">
-                                <asp:DropDownList ID="DropDownListTicketType" runat="server" 
-                                    ClientIDMode="Predictable">
-                                    <asp:ListItem Value="SuperVIP">超级VIP</asp:ListItem>
-                                    <asp:ListItem>VIP</asp:ListItem>
-                                    <asp:ListItem Value="commonsite">普通座位</asp:ListItem>
-                                    <asp:ListItem Value="StandingTicket">站票</asp:ListItem>
-                                </asp:DropDownList>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style14" bgcolor="White">
-                                门票数量：</td>
-                            <td class="style22" bgcolor="White">
-                                <asp:TextBox ID="TextBoxTicketNum" runat="server"></asp:TextBox>
-                            </td>
-                            <td class="style16" bgcolor="White">
                                 发票情况：</td>
-                            <td class="style25" bgcolor="White">
-                                <asp:TextBox ID="TextBoxTicketIssue" runat="server" ReadOnly="true"></asp:TextBox>
+                            <td class="style27" bgcolor="White">
+                                <asp:TextBox ID="TextBoxTicketIssue" runat="server" ReadOnly="true" BackColor="Silver"></asp:TextBox>
                             </td>
                         </tr>
+                        
                       
                         <tr>
                             <td class="style11" bgcolor="White">

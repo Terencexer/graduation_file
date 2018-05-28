@@ -61,6 +61,7 @@
   <ItemGroup>
     <Content Include="Admin\Activity\ActivityAudit.aspx" />
     <Content Include="Admin\Activity\ActivityProcessCheck.aspx" />
+    <Content Include="Admin\Activity\ActivityPublish.aspx" />
     <Content Include="Admin\Activity\ActivityReport.aspx" />
     <Content Include="Admin\Images\Pie.jpg" />
     <Content Include="Aspx\ActivityProcess.aspx" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="Admin\Activity\ActivityProcessCheck.aspx.designer.cs">
       <DependentUpon>ActivityProcessCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Activity\ActivityPublish.aspx.cs">
+      <DependentUpon>ActivityPublish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Activity\ActivityPublish.aspx.designer.cs">
+      <DependentUpon>ActivityPublish.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Activity\ActivityReport.aspx.cs">
       <DependentUpon>ActivityReport.aspx</DependentUpon>

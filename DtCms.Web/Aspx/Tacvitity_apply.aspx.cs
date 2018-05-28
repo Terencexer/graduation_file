@@ -49,6 +49,11 @@ namespace DtCms.Web.Aspx
                plan.Place = DropDownAPlace.SelectedValue.Trim();
                 plan.AConten = Request.Form["txtAContent"];
                 plan.CheckStatus = TextBoxAudMode.Text;
+                plan.StandingNum = 0;
+                plan.SuperVIPNum = 0;
+                plan.VIPNum = 0;
+                plan.CommonNum = 0;
+                plan.TicketStatus = "未发布";
                 int result = planBLL.Add(plan);
                 if (result == 0)
                     Response.Write("<script>alert('提交成功。')</script>");

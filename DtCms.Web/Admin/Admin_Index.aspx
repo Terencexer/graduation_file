@@ -99,6 +99,7 @@
             <li><a href="Activity/ActivityAudit.aspx" target="sysMain">活动审批</a></li>
             <li><a href="Activity/ActivityProcessCheck.aspx" target="sysMain">进度跟进</a></li>
             <li><a href="Activity/ActivityReport.aspx" target="sysMain">活动报告</a></li>
+             <li><a href="Activity/ActivityPublish.aspx" target="sysMain">活动发布</a></li>
           </ul>
         </div>
       </div>

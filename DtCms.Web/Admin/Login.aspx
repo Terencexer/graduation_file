@@ -25,7 +25,7 @@
 				<tr>
 					<td width="170" class="style1">
                     	<label>管理员帐号<br />
-                            <asp:TextBox ID="txtUserName" runat="server" CssClass="login_input" 
+                            <asp:TextBox ID="txtUserName" runat="server" CssClass="login_input"  Text="admin"
                             HintTitle="请输入登录帐号" HintInfo="用户名必须是字母或数字，不能包含空格或其它非法字符，不区分大小写。"></asp:TextBox>
                         </label>
                         <BR>
