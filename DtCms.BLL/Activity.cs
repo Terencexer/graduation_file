@@ -30,7 +30,10 @@ namespace DtCms.BLL
         {
             return dal.GetCount(strWhere);
         }
-
+        public int GetCountMode(string CheckStatus,DateTime dt)
+        {
+            return dal.GetCountMode(CheckStatus,dt);
+        }
         /// <summary>
         /// 增加一条数据
         /// </summary>
@@ -107,8 +110,9 @@ namespace DtCms.BLL
         }
         public void ReupdateOneRecordAuditStatus(string ActivityId)
         {
-            dal.UpdateOneRecordAuditStatus(ActivityId, "未审核");
+            dal.UpdateOneRecordAuditStatus(ActivityId, "再次提交");
         }
+
         public void UpdateOneRecordTicketStatus(string ActivityId)
         {
             dal.UpdateOneRecordTicketStatus(ActivityId, "发布中");
@@ -121,6 +125,10 @@ namespace DtCms.BLL
         {
             return dal.QueryOneRecord(ActivityId);
         }
+         public void UpdateFieldSu(string Id, string strValue)
+        {
+            dal.UpdateFieldSu(Id, strValue);
+         }
 
         #endregion  Method
 

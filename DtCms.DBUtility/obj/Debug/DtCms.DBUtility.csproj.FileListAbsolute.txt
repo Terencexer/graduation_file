@@ -38,3 +38,8 @@ E:\graduation_file8\graduation_file\Dtcms.DBUtility\bin\Debug\DtCms.DBUtility.pd
 E:\graduation_file8\graduation_file\Dtcms.DBUtility\obj\Debug\ResolveAssemblyReference.cache
 E:\graduation_file8\graduation_file\Dtcms.DBUtility\obj\Debug\DtCms.DBUtility.dll
 E:\graduation_file8\graduation_file\Dtcms.DBUtility\obj\Debug\DtCms.DBUtility.pdb
+D:\graduation_file\Dtcms.DBUtility\bin\Debug\DtCms.DBUtility.dll
+D:\graduation_file\Dtcms.DBUtility\bin\Debug\DtCms.DBUtility.pdb
+D:\graduation_file\Dtcms.DBUtility\obj\Debug\ResolveAssemblyReference.cache
+D:\graduation_file\Dtcms.DBUtility\obj\Debug\DtCms.DBUtility.dll
+D:\graduation_file\Dtcms.DBUtility\obj\Debug\DtCms.DBUtility.pdb

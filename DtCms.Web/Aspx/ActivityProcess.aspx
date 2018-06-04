@@ -57,10 +57,21 @@ li:hover .sub_menue
         <li><a href="">活动承办</a>
 	    <ul class="sub_menue">
            <li ><a href="Tacvitity_apply.aspx"style="text-align:center">活动申请</a>
-            <ul class="sub_menue">
-           <li ><a href="AppliRecord.aspx" style="text-align:center" >申请记录</a></li>
-           </ul>
-          </li>
+                <ul class="sub_menue">
+                <li ><a href="AppliRecord.aspx" style="text-align:center" >申请记录</a>
+                <ul class="sub_menue">
+                
+                <li ><a href="ActivityProcess.aspx" style="text-align:center" >进度汇报</a></li>
+                <ul class="sub_menue">
+                
+                <li ><a href="ProgrammeAdd.aspx" style="text-align:center" >添加节目单</a></li>
+
+                </ul>
+                </ul>
+                </li>
+           
+                </ul>
+           </li>
         </ul>
         </li>
         <li><%if (Session["TeamLeader"] != null)
@@ -81,7 +92,8 @@ li:hover .sub_menue
 		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
             CellPadding="3" DataSourceID="SqlDataSource1" Width="800px" 
-            onrowcommand="GridView1_RowCommand" onrowdatabound="GridView1_RowDataBound">
+            onrowcommand="GridView1_RowCommand" 
+            onrowdatabound="GridView1_RowDataBound" AllowPaging="True">
             <Columns>
                 <asp:BoundField DataField="ActivityId" HeaderText="活动编号" 
                     SortExpression="ActivityId" />
@@ -94,10 +106,6 @@ li:hover .sub_menue
                 </asp:BoundField>
                 <asp:BoundField DataField="TicketStatus" HeaderText="发票状态" 
                     SortExpression="TicketStatus" />
-                <asp:BoundField DataField="TicketType" HeaderText="发票类型" 
-                    SortExpression="TicketType" />
-                <asp:BoundField DataField="TicketNum" HeaderText="门票数" 
-                    SortExpression="TicketNum" />
                 <asp:TemplateField HeaderText="前期准备" ShowHeader="False">
                     <ItemTemplate>
                         <asp:Button ID="ButtonPreSub" runat="server" 
@@ -132,7 +140,7 @@ li:hover .sub_menue
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:DtCmsdbConnectionAudit %>" 
-            SelectCommand="SELECT [ActivityId], [Title], [Budget], [ATime], [Place], [TicketStatus], [TicketType], [TicketNum], [CheckStatus] FROM [dt_TacvitityApply] WHERE (([Applicant] = @Applicant) AND ([CheckStatus] = @CheckStatus))">
+            SelectCommand="SELECT [ActivityId], [Title], [Budget], [ATime], [Place], [TicketStatus], [CheckStatus] FROM [dt_TacvitityApply] WHERE (([Applicant] = @Applicant) AND ([CheckStatus] = @CheckStatus))">
             <SelectParameters>
                 <asp:SessionParameter Name="Applicant" SessionField="TeamLeader" 
                     Type="String" />

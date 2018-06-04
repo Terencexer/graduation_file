@@ -59,13 +59,24 @@ li:hover .sub_menue
 		<li><a href="Tfeedback.aspx" >意见反馈</a></li>
 		
         <li><a href="login.aspx" >学生登录</a></li>
-        <li><a href="">活动承办</a>
+       <li><a href="">活动承办</a>
 	    <ul class="sub_menue">
            <li ><a href="Tacvitity_apply.aspx"style="text-align:center">活动申请</a>
-            <ul class="sub_menue">
-           <li ><a href="AppliRecord.aspx" style="text-align:center" >申请记录</a></li>
-           </ul>
-          </li>
+                <ul class="sub_menue">
+                <li ><a href="AppliRecord.aspx" style="text-align:center" >申请记录</a>
+                <ul class="sub_menue">
+                
+                <li ><a href="ActivityProcess.aspx" style="text-align:center" >进度汇报</a></li>
+                <ul class="sub_menue">
+                
+                <li ><a href="ProgrammeAdd.aspx" style="text-align:center" >添加节目单</a></li>
+
+                </ul>
+                </ul>
+                </li>
+           
+                </ul>
+           </li>
         </ul>
         </li>
         <li><%if (Session["TeamLeader"] != null)
@@ -110,9 +121,6 @@ li:hover .sub_menue
                     </ItemTemplate>
                     <HeaderStyle Width="100px" />
                 </asp:TemplateField>
-                <asp:BoundField DataField="TicketNum" HeaderText="票数" />
-                <asp:BoundField DataField="TicketType" HeaderText="发票类型" 
-                    SortExpression="TicketType" />
                 <asp:BoundField DataField="TicketStatus" HeaderText="发票状态" 
                     SortExpression="TicketStatus" />
                 <asp:TemplateField HeaderText="编辑" ShowHeader="False">
@@ -138,7 +146,9 @@ li:hover .sub_menue
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:DtCmsdbConnectionAudit %>" 
             
-            SelectCommand="SELECT [ActivityId], [Applicant], [Title], [Budget], [ATime], [AConten], [Place], [AddTime], [CheckStatus], [TicketNum], [TicketType], [TicketStatus] FROM [dt_TacvitityApply] WHERE ([Applicant] = @Applicant)">
+            
+            
+            SelectCommand="SELECT [ActivityId], [Applicant], [Title], [Budget], [ATime], [AConten], [Place], [AddTime], [CheckStatus], [TicketStatus] FROM [dt_TacvitityApply] WHERE ([Applicant] = @Applicant)">
             <SelectParameters>
                 <asp:SessionParameter Name="Applicant" SessionField="TeamLeader" 
                     Type="String" />
@@ -159,7 +169,7 @@ li:hover .sub_menue
                             <td class="style14" bgcolor="White" >
                                 活动编号：</td>
                             <td class="style22" bgcolor="White">
-                                <asp:TextBox ID="TextBoxActivityId" runat="server" ></asp:TextBox>
+                                <asp:TextBox ID="TextBoxActivityId" runat="server" ReadOnly="True" BackColor="Silver"></asp:TextBox>
                             </td>
                             <td class="style16" bgcolor="White">
                                 申请人：</td>
@@ -183,12 +193,33 @@ li:hover .sub_menue
                             <td class="style15" bgcolor="White">
                                 时间：</td>
                             <td class="style23" bgcolor="White">
-                                <asp:TextBox ID="TextBoxATime" runat="server"></asp:TextBox>
+                                <input type="text" id="test5" runat=server>
+    <script src="./layDate-v5.0.9/layDate-v5.0.9/laydate/laydate.js"></script> <!-- 改成你的路径 -->
+    <script>
+    //执行一个laydate实例
+     laydate.render({
+        elem: '#test5' //指定元素
+ , type: 'datetime'
+    });
+</script>
                             </td>
                             <td class="style17" bgcolor="White">
                                 地点：</td>
                             <td class="style26" bgcolor="White">
-                                <asp:TextBox ID="TextBoxPlace" runat="server"></asp:TextBox>
+                                <asp:DropDownList ID="DropDownAPlace" runat="server">
+                                    <asp:ListItem>学术一报</asp:ListItem>
+                                    <asp:ListItem>学术二报</asp:ListItem>
+                                    <asp:ListItem>学术四报</asp:ListItem>
+                                    <asp:ListItem>学术多功能厅</asp:ListItem>
+                                    <asp:ListItem>油桶剧场</asp:ListItem>
+                                    <asp:ListItem>文化长廊</asp:ListItem>
+                                    <asp:ListItem>教室</asp:ListItem>
+                                    <asp:ListItem>油桶307</asp:ListItem>
+                                    <asp:ListItem>油桶多功能厅</asp:ListItem>
+                                    <asp:ListItem>油桶外场</asp:ListItem>
+                                    <asp:ListItem>体育馆外场</asp:ListItem>
+                                    <asp:ListItem>体育馆</asp:ListItem>
+                                </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
@@ -198,27 +229,9 @@ li:hover .sub_menue
                                 <asp:TextBox ID="TextBoxCheckStatus" runat="server" ReadOnly="True" BackColor="Silver" ></asp:TextBox>
                             </td>
                             <td class="style18" bgcolor="White">
-                                门票类型：</td>
-                            <td class="style27" bgcolor="White">
-                                <asp:DropDownList ID="DropDownListTicketType" runat="server" 
-                                    ClientIDMode="Predictable">
-                                    <asp:ListItem Value="SuperVIP">超级VIP</asp:ListItem>
-                                    <asp:ListItem>VIP</asp:ListItem>
-                                    <asp:ListItem Value="commonsite">普通座位</asp:ListItem>
-                                    <asp:ListItem Value="StandingTicket">站票</asp:ListItem>
-                                </asp:DropDownList>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style14" bgcolor="White">
-                                门票数量：</td>
-                            <td class="style22" bgcolor="White">
-                                <asp:TextBox ID="TextBoxTicketNum" runat="server"></asp:TextBox>
-                            </td>
-                            <td class="style16" bgcolor="White">
                                 发票情况：</td>
-                            <td class="style25" bgcolor="White">
-                                <asp:TextBox ID="TextBoxTicketIssue" runat="server" ReadOnly="true"></asp:TextBox>
+                            <td class="style27" bgcolor="White">
+                                <asp:TextBox ID="TextBoxTicketIssue" runat="server" ReadOnly="true" BackColor="Silver"></asp:TextBox>
                             </td>
                         </tr>
                       
@@ -227,6 +240,14 @@ li:hover .sub_menue
                                 策划内容：</td>
                             <td colspan="3" bgcolor="White">
                                 <asp:TextBox ID="TextBoxAcontent" runat="server" Height="131px" Width="532px" maxlength="3000"></asp:TextBox>
+                            </td>
+                            
+                        </tr>
+                         <tr>
+                            <td class="style11" bgcolor="White">
+                                修改意见：</td>
+                            <td colspan="3" bgcolor="White">
+                                <asp:TextBox ID="TextBoxASuggestion" runat="server" Height="131px" Width="532px" maxlength="3000" ReadOnly="True" BackColor="Silver"></asp:TextBox>
                             </td>
                             
                         </tr>

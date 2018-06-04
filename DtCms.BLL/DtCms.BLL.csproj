@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity.cs" />
+    <Compile Include="Actor.cs" />
     <Compile Include="Adbanner.cs" />
     <Compile Include="Administrator.cs" />
     <Compile Include="Advertising.cs" />
@@ -77,6 +78,8 @@
     <Compile Include="Feedback.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="JoinActivity.cs" />
+    <Compile Include="JoinAT.cs" />
     <Compile Include="Links.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -84,6 +87,7 @@
     <Compile Include="Pictures.cs" />
     <Compile Include="PicturesAlbum.cs" />
     <Compile Include="PicturesField.cs" />
+    <Compile Include="Programme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Score.cs" />
     <Compile Include="Societies.cs" />

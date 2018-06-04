@@ -53,9 +53,9 @@ namespace DtCms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into dt_Member(");
-            strSql.Append("UserName,Pwd,TureName,UserTel,UserQQ,AddTime)");
+            strSql.Append("UserName,Pwd,TureName,UserTel,UserQQ,AddTime,Team,IsATMember)");
             strSql.Append(" values (");
-            strSql.Append("@UserName,@Pwd,@TureName,@UserTel,@UserQQ,@AddTime)");
+            strSql.Append("@UserName,@Pwd,@TureName,@UserTel,@UserQQ,@AddTime,@Team,@IsATMember)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
 					new SqlParameter("@UserName", SqlDbType.NVarChar,20),
@@ -63,14 +63,17 @@ namespace DtCms.DAL
                     new SqlParameter("@TureName", SqlDbType.NVarChar,20),
 					new SqlParameter("@UserTel", SqlDbType.NVarChar,30),
 					new SqlParameter("@UserQQ", SqlDbType.NVarChar,50),
-					new SqlParameter("@AddTime", SqlDbType.DateTime)};
+					new SqlParameter("@AddTime", SqlDbType.DateTime),
+                                        new SqlParameter("@Team", SqlDbType.NVarChar,50),
+                                        new SqlParameter("@IsATMember", SqlDbType.NVarChar,10)};
             parameters[0].Value = model.Username;
             parameters[1].Value = model.Pwd;
             parameters[2].Value = model.Turename;
             parameters[3].Value = model.Usertel;
             parameters[4].Value = model.Userqq;
             parameters[5].Value = model.AddTime;
-
+            parameters[6].Value = model.Team;
+            parameters[7].Value = model.IsATMember;
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)
             {
@@ -106,6 +109,8 @@ namespace DtCms.DAL
             strSql.Append("UserTel=@UserTel,");
             strSql.Append("UserQQ=@UserQQ,");
             strSql.Append("AddTime=@AddTime,");
+            strSql.Append("Team=@Team,");
+            strSql.Append("IsATMember=@IsATMember,");
             strSql.Append(" where Id=@Id");
             SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4),
@@ -114,7 +119,9 @@ namespace DtCms.DAL
                     new SqlParameter("@TureName", SqlDbType.NVarChar,20),
 					new SqlParameter("@UserTel", SqlDbType.NVarChar,30),
 					new SqlParameter("@UserQQ", SqlDbType.NVarChar,50),
-					new SqlParameter("@AddTime", SqlDbType.DateTime)};
+					new SqlParameter("@AddTime", SqlDbType.DateTime),
+                                         new SqlParameter("@Team", SqlDbType.NVarChar,50),
+                                        new SqlParameter("@IsATMember", SqlDbType.NVarChar,10)};
             parameters[0].Value = model.Id;
             parameters[1].Value = model.Username;
             parameters[2].Value = model.Pwd;
@@ -122,6 +129,8 @@ namespace DtCms.DAL
             parameters[4].Value = model.Usertel;
             parameters[5].Value = model.Userqq;
             parameters[6].Value = model.AddTime;
+            parameters[7].Value = model.Team;
+            parameters[8].Value = model.IsATMember;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -186,7 +195,7 @@ namespace DtCms.DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select  top 1 Id,UserName,Pwd,TureName,UserTel,UserQQ,AddTime from dt_Member ");
+            strSql.Append("select  top 1 Id,UserName,Pwd,TureName,UserTel,UserQQ,AddTime,Team,IsATMember from dt_Member ");
             strSql.Append(" where Id=@Id");
             SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -206,6 +215,8 @@ namespace DtCms.DAL
                 model.Turename = ds.Tables[0].Rows[0]["TureName"].ToString();
                 model.Usertel = ds.Tables[0].Rows[0]["UserTel"].ToString();
                 model.Userqq = ds.Tables[0].Rows[0]["UserQQ"].ToString();
+                model.Team = ds.Tables[0].Rows[0]["Team"].ToString();
+                model.IsATMember = ds.Tables[0].Rows[0]["IsATMember"].ToString();
                 if (ds.Tables[0].Rows[0]["AddTime"].ToString() != "")
                 {
                     model.AddTime = DateTime.Parse(ds.Tables[0].Rows[0]["AddTime"].ToString());
@@ -224,7 +235,7 @@ namespace DtCms.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select Id,UserName,Pwd,TureName,UserTel,UserQQ,AddTime ");
+            strSql.Append("select Id,UserName,Pwd,TureName,UserTel,UserQQ,AddTime,Team,IsATMember ");
             strSql.Append(" FROM dt_Member ");
             if (strWhere.Trim() != "")
             {
@@ -244,7 +255,7 @@ namespace DtCms.DAL
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" Id,UserName,Pwd,TureName,UserTel,UserQQ,AddTime ");
+            strSql.Append(" Id,UserName,Pwd,TureName,UserTel,UserQQ,AddTime,Team,IsATMember ");
             strSql.Append(" FROM dt_Member ");
             if (strWhere.Trim() != "")
             {
@@ -261,7 +272,7 @@ namespace DtCms.DAL
         {
             int topSize = pageSize * currentPage;
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select top " + pageSize + " Id,UserName,Pwd,TureName,UserTel,UserQQ,AddTime from dt_Member ");
+            strSql.Append("select top " + pageSize + " Id,UserName,Pwd,TureName,UserTel,UserQQ,AddTime,Team,IsATMember from dt_Member ");
             strSql.Append(" where Id not in(select top " + topSize + " Id from dt_Member");
             if (strWhere.Trim() != "")
             {
@@ -276,5 +287,38 @@ namespace DtCms.DAL
 
             return DbHelperSQL.Query(strSql.ToString());
         }
+        public DtCms.Model.Member QueryOneRecord(string UserName)
+        {
+            DtCms.Model.Member member;
+
+
+            string cmdstr = "Select * From dt_Member Where UserName='" + UserName + "'";
+            SqlParameter[] SqlParam = new SqlParameter[1];
+            SqlParam[0] = new SqlParameter("@UserName", UserName);
+
+            //获取SqlDataReader对象
+            SqlDataReader dataReader = DbHelperSQL.ExecuteReader(cmdstr, SqlParam);
+
+            if (dataReader.Read())
+            {
+
+                member = new DtCms.Model.Member();
+
+                member.Id = Convert.ToInt32(dataReader["Id"]);
+                member.Username = dataReader["Username"].ToString();
+                member.Turename = dataReader["Turename"].ToString();
+                member.Team = dataReader["Team"].ToString();
+                member.Usertel = dataReader["Usertel"].ToString(); ;
+                member.IsATMember = dataReader["IsATMember"].ToString();
+               
+            }
+            else
+                member = null;
+            dataReader.Close();
+
+
+            return member;
+        }
+    
     }
 }

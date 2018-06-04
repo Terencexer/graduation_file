@@ -50,16 +50,8 @@
         <br />
             <br />
             <div>
-                <asp:Label ID="Label1" runat="server" Text="年份:"></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem>2015</asp:ListItem>
-                    <asp:ListItem>2016</asp:ListItem>
-                    <asp:ListItem>2017</asp:ListItem>
-                    <asp:ListItem>2018</asp:ListItem>
-                </asp:DropDownList>
                 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="ButtonCheck" runat="server" Text="查询" />
-            </div>
+                </div>
                 <div align="center">
                     <img alt="" class="style1" src="../Images/Pie.jpg" />
                 </div>

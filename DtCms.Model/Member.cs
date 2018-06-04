@@ -13,7 +13,8 @@ namespace DtCms.Model
         private string _usertel;
         private string _userqq;
         private DateTime _addtime = DateTime.Now;
-
+        private string _team;
+        private string _isATMember;
         public int Id
         {
             set { _id = value; }
@@ -50,6 +51,15 @@ namespace DtCms.Model
             set { _addtime = value; }
             get { return _addtime; }
         }
-
+        public string Team
+        {
+            set { _team = value; }
+            get { return _team; }
+        }
+        public string IsATMember
+        {
+            set { _isATMember = value; }
+            get { return _isATMember; }
+        }
     }
 }

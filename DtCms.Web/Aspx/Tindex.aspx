@@ -46,6 +46,7 @@ li:hover .sub_menue
 		<li><a href="Tfeedback.aspx" >意见反馈</a></li>
 		
         <li><a href="login.aspx" >学生登录</a></li>
+        <li><a href="TJCheck.aspx" >入队审核</a></li>
         <li><a href="">活动承办</a>
 	    <ul class="sub_menue">
            <li ><a href="Tacvitity_apply.aspx"style="text-align:center">活动申请</a>
@@ -54,6 +55,11 @@ li:hover .sub_menue
                 <ul class="sub_menue">
                 
                 <li ><a href="ActivityProcess.aspx" style="text-align:center" >进度汇报</a></li>
+                <ul class="sub_menue">
+                
+                <li ><a href="ProgrammeAdd.aspx" style="text-align:center" >添加节目单</a></li>
+
+                </ul>
                 </ul>
                 </li>
            

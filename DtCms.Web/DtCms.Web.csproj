@@ -60,18 +60,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Activity\ActivityAudit.aspx" />
+    <Content Include="Admin\Activity\ActivityCheckReport.aspx" />
     <Content Include="Admin\Activity\ActivityProcessCheck.aspx" />
     <Content Include="Admin\Activity\ActivityPublish.aspx" />
-    <Content Include="Admin\Activity\ActivityReport.aspx" />
+    <Content Include="Admin\Activity\report.aspx" />
     <Content Include="Admin\Images\Pie.jpg" />
     <Content Include="Aspx\ActivityProcess.aspx" />
     <Content Include="Aspx\AppliRecord.aspx" />
+    <Content Include="Aspx\JoinActivity.aspx" />
+    <Content Include="Aspx\JoinAT.aspx" />
     <Content Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\laydate\laydate.js" />
     <Content Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\laydate\theme\default\laydate.css" />
     <Content Include="Aspx\layDate-v5.0.9\layDate-v5.0.9\test.html" />
+    <Content Include="Aspx\ProgrammeAdd.aspx" />
     <Content Include="Aspx\Tacvitity_apply.aspx" />
     <Content Include="Aspx\Tfeedback.aspx" />
     <Content Include="Aspx\Tindex.aspx" />
+    <Content Include="Aspx\TJCheck.aspx" />
     <Content Include="bin\DtCms.Web.dll" />
     <Content Include="bin\DtCms.Web.pdb" />
     <Content Include="Css\custom-theme\images\ui-bg_diagonals-medium_20_423e3e_40x40.png" />
@@ -121,6 +126,13 @@
     <Compile Include="Admin\Activity\ActivityAudit.aspx.designer.cs">
       <DependentUpon>ActivityAudit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Activity\ActivityCheckReport.aspx.cs">
+      <DependentUpon>ActivityCheckReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Activity\ActivityCheckReport.aspx.designer.cs">
+      <DependentUpon>ActivityCheckReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Activity\ActivityProcessCheck.aspx.cs">
       <DependentUpon>ActivityProcessCheck.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,12 +147,12 @@
     <Compile Include="Admin\Activity\ActivityPublish.aspx.designer.cs">
       <DependentUpon>ActivityPublish.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Activity\ActivityReport.aspx.cs">
-      <DependentUpon>ActivityReport.aspx</DependentUpon>
+    <Compile Include="Admin\Activity\report.aspx.cs">
+      <DependentUpon>report.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Activity\ActivityReport.aspx.designer.cs">
-      <DependentUpon>ActivityReport.aspx</DependentUpon>
+    <Compile Include="Admin\Activity\report.aspx.designer.cs">
+      <DependentUpon>report.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Admin_Center.aspx.cs">
       <DependentUpon>Admin_Center.aspx</DependentUpon>
@@ -365,12 +377,33 @@
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Aspx\JoinActivity.aspx.cs">
+      <DependentUpon>JoinActivity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\JoinActivity.aspx.designer.cs">
+      <DependentUpon>JoinActivity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspx\JoinAT.aspx.cs">
+      <DependentUpon>JoinAT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\JoinAT.aspx.designer.cs">
+      <DependentUpon>JoinAT.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Aspx\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Aspx\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspx\ProgrammeAdd.aspx.cs">
+      <DependentUpon>ProgrammeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\ProgrammeAdd.aspx.designer.cs">
+      <DependentUpon>ProgrammeAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Aspx\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -413,6 +446,13 @@
     </Compile>
     <Compile Include="Aspx\Tindex.aspx.designer.cs">
       <DependentUpon>Tindex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspx\TJCheck.aspx.cs">
+      <DependentUpon>TJCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\TJCheck.aspx.designer.cs">
+      <DependentUpon>TJCheck.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\Advert_js.ashx.cs">
@@ -861,7 +901,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>42331</DevelopmentServerPort>
+          <DevelopmentServerPort>3722</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

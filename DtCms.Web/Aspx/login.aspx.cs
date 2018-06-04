@@ -27,11 +27,11 @@ namespace DtCms.Web.Aspx
             string Code = txtCode.Text.Trim();
             string UserName = txtUserName.Text.Trim();
             string pwd = txtpwd.Text.Trim();
-      //      if (Code.ToLower() != (Session["DtCode"].ToString()).ToLower())
-       //     {
-       //         Response.Write("<script>alert('您输入的验证码与系统的不一致！');</script>");
-       //         return;
-       //     }
+          if (Code.ToLower() != (Session["DtCode"].ToString()).ToLower())
+           {
+               Response.Write("<script>alert('您输入的验证码与系统的不一致！');</script>");
+                return;
+          }
             if (string.IsNullOrEmpty(UserName))
             {
                 Response.Write("<script>alert('请输入会员名！');</script>");

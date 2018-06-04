@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using DtCms.BLL;
+using System.Configuration;
 
 namespace DtCms.Web.Aspx
 {
@@ -33,7 +34,12 @@ namespace DtCms.Web.Aspx
                         e.Row.BackColor = System.Drawing.Color.Beige;
                         buttonedit.Enabled = true;
                     }
-                    if (AuditStatus == "审核通过")
+                    else if (AuditStatus == "再次提交")
+                    {
+                        e.Row.BackColor = System.Drawing.Color.Beige;
+                        buttonedit.Enabled = true;
+                    }
+                    else if (AuditStatus == "审核通过")
                     {
                         buttonedit.Enabled = false;
 
@@ -72,11 +78,11 @@ namespace DtCms.Web.Aspx
                 DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
                 TextBoxActivityId.Text = activityId;
                 TextBoxApplicant.Text = activity.QueryActivity(activityId).Applicant;
-                TextBoxATime.Text = activity.QueryActivity(activityId).ATime.ToString();
+                test5.Value= activity.QueryActivity(activityId).ATime.ToString();
                 TextBoxBudget.Text = activity.QueryActivity(activityId).Budget.ToString();
                 TextBoxCheckStatus.Text = activity.QueryActivity(activityId).CheckStatus.ToString();
-                TextBoxPlace.Text = activity.QueryActivity(activityId).Place.ToString();
-
+                DropDownAPlace.Text = activity.QueryActivity(activityId).Place.ToString();
+                TextBoxASuggestion.Text = activity.QueryActivity(activityId).ASuggestion.ToString();
                 // DropDownListTicketType.Text = activity.QueryActivity(activityId).TicketType.ToString();   
                 TextBoxTitle.Text = activity.QueryActivity(activityId).Title;
                 TextBoxAcontent.Text = activity.QueryActivity(activityId).AConten.ToString();
@@ -94,10 +100,11 @@ namespace DtCms.Web.Aspx
             activity.Applicant = TextBoxApplicant.Text.Trim();
             activity.Title = TextBoxTitle.Text.Trim();
             activity.Budget = Convert.ToInt32(TextBoxBudget.Text.Trim());
-            activity.ATime = Convert.ToDateTime(TextBoxATime.Text);
-            activity.Place = TextBoxPlace.Text.Trim();
+            activity.ATime = Convert.ToDateTime(Request.Form["test5"]);
+            activity.Place = DropDownAPlace.SelectedValue.Trim();
             activity.AConten = TextBoxAcontent.Text.Trim();
             activity.CheckStatus = TextBoxCheckStatus.Text.Trim();
+            activity.ASuggestion = "无建议";
             activityBLL.Update(activity);
             Response.Write("<script>alert('提交成功。')</script>");
             activityBLL.ReupdateOneRecordAuditStatus(TextBoxActivityId.Text.Trim());

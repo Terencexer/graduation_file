@@ -103,22 +103,22 @@ namespace DtCms.Web.Aspx {
         protected global::System.Web.UI.WebControls.TextBox TextBoxBudget;
         
         /// <summary>
-        /// TextBoxATime 控件。
+        /// test5 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxATime;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText test5;
         
         /// <summary>
-        /// TextBoxPlace 控件。
+        /// DropDownAPlace 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPlace;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownAPlace;
         
         /// <summary>
         /// TextBoxCheckStatus 控件。
@@ -128,24 +128,6 @@ namespace DtCms.Web.Aspx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxCheckStatus;
-        
-        /// <summary>
-        /// DropDownListTicketType 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListTicketType;
-        
-        /// <summary>
-        /// TextBoxTicketNum 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTicketNum;
         
         /// <summary>
         /// TextBoxTicketIssue 控件。
@@ -164,6 +146,15 @@ namespace DtCms.Web.Aspx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxAcontent;
+        
+        /// <summary>
+        /// TextBoxASuggestion 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxASuggestion;
         
         /// <summary>
         /// ButtonEditSub 控件。

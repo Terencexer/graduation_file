@@ -20,10 +20,13 @@
 	<ul class="nav">
 		<li><a href="<%=URLRewrite("index", "")%>">首页</a></li>
 		<li><a href="<%=URLRewrite("article", "")%>">新闻中心</a></li>
-		<li><a href="<%=URLRewrite("societies", "")%>">晚会评分</a></li>
+		<li><a href="<%=URLRewrite("societies", "")%>">活动评分</a></li>
 		<li><a href="<%=URLRewrite("feedback", "")%>">意见反馈</a></li>
+        <li><a href="JoinActivity.aspx">活动抢票</a></li>
+        <li><a href="JoinAT.aspx">申请入团</a></li>
 		<li><a href="<%=URLRewrite("register", "register")%>">学生注册</a></li>
 		<li><a href="<%=URLRewrite("login", "login")%>">学生登录</a></li>
+
 		<li><%if (Session["Member"] != null)
         {%><a href="#">用户名：<%=Session["Member"].ToString()%></a><%}%></li>
 	</ul>

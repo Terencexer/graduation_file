@@ -11,7 +11,7 @@ namespace DtCms.Model
         public string Title { get; set; }
         public string Place { get; set; }
         public string CheckStatus { get; set; }
-     
+        public string ASuggestion { get; set; }
         public string AConten { get; set; }
         public string AInTrodatction { get; set; }
         public string Preparation { get; set; }

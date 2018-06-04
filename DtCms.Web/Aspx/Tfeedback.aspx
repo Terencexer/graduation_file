@@ -55,13 +55,24 @@ li:hover .sub_menue
 		<li><a href="Tfeedback.aspx" >意见反馈</a></li>
 		
         <li><a href="login.aspx" >学生登录</a></li>
-        <li><a href="Tindex.aspx">活动承办</a>
+        <li><a href="">活动承办</a>
 	    <ul class="sub_menue">
            <li ><a href="Tacvitity_apply.aspx"style="text-align:center">活动申请</a>
-            <ul class="sub_menue">
-           <li ><a href="Tfeedback.aspx" style="text-align:center" >意见反馈</a></li>
-           </ul>
-          </li>
+                <ul class="sub_menue">
+                <li ><a href="AppliRecord.aspx" style="text-align:center" >申请记录</a>
+                <ul class="sub_menue">
+                
+                <li ><a href="ActivityProcess.aspx" style="text-align:center" >进度汇报</a></li>
+                <ul class="sub_menue">
+                
+                <li ><a href="ProgrammeAdd.aspx" style="text-align:center" >添加节目单</a></li>
+
+                </ul>
+                </ul>
+                </li>
+           
+                </ul>
+           </li>
         </ul>
         </li>
         <li><%if (Session["TeamLeader"] != null)

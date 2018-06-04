@@ -50,6 +50,17 @@ namespace DtCms.DAL
             }
             return Convert.ToInt32(DbHelperSQL.GetSingle(strSql.ToString()));
         }
+        public int GetCountMode(string CheckStatus,DateTime dt)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(*) as H ");
+            strSql.Append(" from dt_TacvitityApply ");
+            if (CheckStatus.Trim() != "")
+            {
+                strSql.Append(" where CheckStatus='" + CheckStatus+"' AND DATENAME(year,Atime)='"+ dt.Year+"'");
+            }
+            return Convert.ToInt32(DbHelperSQL.GetSingle(strSql.ToString()));
+        }
 
         /// <summary>
         /// 增加一条数据
@@ -58,9 +69,9 @@ namespace DtCms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into dt_TacvitityApply(");
-            strSql.Append("ActivityId,Applicant,Title,Budget,ATime,AConten,AInTrodatction,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,SuperVIPNum,VIPNum,CommonNum,StandingNum,TicketStatus)");
+            strSql.Append("ActivityId,Applicant,Title,Budget,ATime,AConten,AInTrodatction,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,SuperVIPNum,VIPNum,CommonNum,StandingNum,TicketStatus,ASuggestion)");
             strSql.Append(" values (");
-            strSql.Append("@ActivityId,@Applicant,@Title,@Budget,@ATime,@AConten,@AInTrodatction,@Place,@AddTime,@CheckStatus,@Preparation,@Middle,@LastPre,,@SuperVIPNum,,@VIPNum,,@CommonNum,,@StandingNum,@TicketStatus)");
+            strSql.Append("@ActivityId,@Applicant,@Title,@Budget,@ATime,@AConten,@AInTrodatction,@Place,@AddTime,@CheckStatus,@Preparation,@Middle,@LastPre,@SuperVIPNum,@VIPNum,@CommonNum,@StandingNum,@TicketStatus,@ASuggestion)");
 
             SqlParameter[] parameters = {
 					new SqlParameter("@ActivityId", SqlDbType.VarChar,20),
@@ -81,9 +92,10 @@ namespace DtCms.DAL
                     new SqlParameter("@VIPNum", SqlDbType.Int),
                      new SqlParameter("@CommonNum", SqlDbType.Int),
                       new SqlParameter("@StandingNum", SqlDbType.Int),
-                  new SqlParameter("@TicketStatus", SqlDbType.NVarChar,50)};
-                   parameters[0].Value = model.ActivityId;
-                   parameters[1].Value = model.Applicant;
+                  new SqlParameter("@TicketStatus", SqlDbType.NVarChar,50),
+            new SqlParameter("@ASuggestion", SqlDbType.NText)};
+            parameters[0].Value = model.ActivityId;
+            parameters[1].Value = model.Applicant;
             parameters[2].Value = model.Title;
             parameters[3].Value = model.Budget;
             parameters[4].Value = model.ATime;
@@ -99,8 +111,8 @@ namespace DtCms.DAL
             parameters[14].Value = model.VIPNum;
             parameters[15].Value = model.CommonNum;
             parameters[16].Value = model.StandingNum;
-             parameters[17].Value = model.TicketStatus;
-
+            parameters[17].Value = model.TicketStatus;
+            parameters[18].Value = model.ASuggestion;
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)
             {
@@ -119,6 +131,13 @@ namespace DtCms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update dt_TacvitityApply set " + strValue);
+            strSql.Append(" where ActivityId='" + Id + "'");
+            DbHelperSQL.ExecuteSql(strSql.ToString());
+        }
+        public void UpdateFieldSu(string Id, string strValue)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update dt_TacvitityApply set ASuggestion='" + strValue+"'");
             strSql.Append(" where ActivityId='" + Id + "'");
             DbHelperSQL.ExecuteSql(strSql.ToString());
         }
@@ -150,10 +169,26 @@ namespace DtCms.DAL
         public bool Update(DtCms.Model.Activity model)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("insert into dt_TacvitityApply(");
-            strSql.Append("ActivityId,Applicant,Title,Budget,ATime,AConten,AInTrodatction,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,SuperVIPNum,VIPNum,CommonNum,StandingNum,TicketStatus)");
-            strSql.Append(" values (");
-            strSql.Append("@ActivityId,@Applicant,@Title,@Budget,@ATime,@AConten,@AInTrodatction,@Place,@AddTime,@CheckStatus,@Preparation,@Middle,@LastPre,,@SuperVIPNum,,@VIPNum,,@CommonNum,,@StandingNum,@TicketStatus)");
+            strSql.Append("update dt_TacvitityApply set ");
+            strSql.Append("Applicant=@Applicant,");
+            strSql.Append("Title=@Title,");
+            strSql.Append("Budget=@Budget,");
+            strSql.Append("ATime=@ATime,");
+            strSql.Append("AConten=@AConten,");
+            strSql.Append("AInTrodatction=@AInTrodatction,");
+            strSql.Append("Place=@Place,");
+            strSql.Append("AddTime=@AddTime,");
+            strSql.Append("CheckStatus=@CheckStatus,");
+            strSql.Append("Preparation=@Preparation,");
+            strSql.Append("Middle=@Middle,");
+            strSql.Append("LastPre=@LastPre,");
+            strSql.Append("SuperVIPNum=@SuperVIPNum,");
+            strSql.Append("VIPNum=@VIPNum,");
+            strSql.Append("CommonNum=@CommonNum,");
+            strSql.Append("StandingNum=@StandingNum,");
+            strSql.Append("TicketStatus=@TicketStatus,");
+            strSql.Append("ASuggestion=@ASuggestion ");
+            strSql.Append(" where ActivityId=@ActivityId");
 
             SqlParameter[] parameters = {
 					new SqlParameter("@ActivityId", SqlDbType.VarChar,20),
@@ -174,7 +209,8 @@ namespace DtCms.DAL
                     new SqlParameter("@VIPNum", SqlDbType.Int),
                      new SqlParameter("@CommonNum", SqlDbType.Int),
                       new SqlParameter("@StandingNum", SqlDbType.Int),
-                  new SqlParameter("@TicketStatus", SqlDbType.NVarChar,50)};
+                  new SqlParameter("@TicketStatus", SqlDbType.NVarChar,50),
+                    new SqlParameter("@ASuggestion", SqlDbType.NText)};
             parameters[0].Value = model.ActivityId;
             parameters[1].Value = model.Applicant;
             parameters[2].Value = model.Title;
@@ -193,7 +229,7 @@ namespace DtCms.DAL
             parameters[15].Value = model.CommonNum;
             parameters[16].Value = model.StandingNum;
             parameters[17].Value = model.TicketStatus;
-
+            parameters[18].Value = model.ASuggestion;
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -256,7 +292,7 @@ namespace DtCms.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select ActivityId,Applicant,Title,Budget,ATime,AConten,AInTrodatction,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,SuperVIPNum,VIPNum,CommonNum,StandingNum,TicketStatus ");
+            strSql.Append("select ActivityId,Applicant,Title,Budget,ATime,AConten,AInTrodatction,Place,AddTime,CheckStatus,Preparation,Middle,LastPre,SuperVIPNum,VIPNum,CommonNum,StandingNum,TicketStatus,ASuggestion");
             strSql.Append(" FROM dt_TacvitityApply ");
             if (strWhere.Trim() != "")
             {
@@ -315,19 +351,27 @@ namespace DtCms.DAL
                 activity.StandingNum = Convert.ToInt32(dataReader["StandingNum"]);
                
                 activity.TicketStatus = dataReader["TicketStatus"].ToString();
+                
+                if (dataReader["ASuggestion"] is System.DBNull)
+                {
+                    activity.ASuggestion = "无建议";
+                }
+                else activity.ASuggestion = dataReader["ASuggestion"].ToString();
                 if (dataReader["Preparation"] is System.DBNull)
                 {
                     activity.Preparation = "未提交";
                 }
+                else activity.Preparation = dataReader["Preparation"].ToString();
                 if (dataReader["Middle"] is System.DBNull)
                 {
                     activity.Middle = "未提交";
                 }
+                else activity.Middle = dataReader["Middle"].ToString();
                 if (dataReader["LastPre"] is System.DBNull)
                 {
                     activity.LastPre = "未提交";
                 }
-
+                else activity.LastPre = dataReader["LastPre"].ToString();
             }
             else
                 activity = null;

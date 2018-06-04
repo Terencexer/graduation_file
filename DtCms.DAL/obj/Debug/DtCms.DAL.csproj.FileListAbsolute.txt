@@ -86,3 +86,14 @@ E:\graduation_file8\graduation_file\DtCms.DAL\bin\Debug\DtCms.Model.pdb
 E:\graduation_file8\graduation_file\DtCms.DAL\obj\Debug\ResolveAssemblyReference.cache
 E:\graduation_file8\graduation_file\DtCms.DAL\obj\Debug\DtCms.DAL.dll
 E:\graduation_file8\graduation_file\DtCms.DAL\obj\Debug\DtCms.DAL.pdb
+D:\graduation_file\DtCms.DAL\bin\Debug\DtCms.DAL.dll
+D:\graduation_file\DtCms.DAL\bin\Debug\DtCms.DAL.pdb
+D:\graduation_file\DtCms.DAL\bin\Debug\DtCms.Common.dll
+D:\graduation_file\DtCms.DAL\bin\Debug\DtCms.DBUtility.dll
+D:\graduation_file\DtCms.DAL\bin\Debug\DtCms.Model.dll
+D:\graduation_file\DtCms.DAL\bin\Debug\DtCms.Common.pdb
+D:\graduation_file\DtCms.DAL\bin\Debug\DtCms.DBUtility.pdb
+D:\graduation_file\DtCms.DAL\bin\Debug\DtCms.Model.pdb
+D:\graduation_file\DtCms.DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\graduation_file\DtCms.DAL\obj\Debug\DtCms.DAL.dll
+D:\graduation_file\DtCms.DAL\obj\Debug\DtCms.DAL.pdb

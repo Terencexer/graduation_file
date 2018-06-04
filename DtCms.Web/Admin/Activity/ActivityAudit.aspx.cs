@@ -10,13 +10,14 @@ using DtCms.BLL;
 
 namespace DtCms.Web.Admin.Activity
 {
-    public partial class ActivityAudit : System.Web.UI.Page
+    public partial class ActivityAudit : DtCms.Web.UI.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
             {
                 PanelEdit.Visible = false;
+                PanelBack.Visible = false;
             }
 
 
@@ -45,6 +46,12 @@ namespace DtCms.Web.Admin.Activity
                     buttonaudit.Enabled = true;
                     
                 }
+                if (AuditStatus == "再次提交")
+                {
+                    e.Row.BackColor = System.Drawing.Color.Beige;
+                    buttonaudit.Enabled = true;
+
+                }
                 if (AuditStatus == "审核通过")
                 {
                     buttonaudit.Enabled = false;
@@ -56,7 +63,9 @@ namespace DtCms.Web.Admin.Activity
                 {
                     e.Row.BackColor = System.Drawing.Color.AliceBlue;
                     
-                    buttonaudit.Enabled = true;
+                    buttonaudit.Enabled = false;
+                    buttonback.Enabled = false;
+                    buttonuncheck.Enabled = false;
                 }
 
                 else if (AuditStatus == "不批准")
@@ -75,7 +84,7 @@ namespace DtCms.Web.Admin.Activity
             
             if (e.CommandName == "ButtonAudit")
             {
-
+                PanelBack.Visible = false;
                 int dataItemIndex = Convert.ToInt32(e.CommandArgument);
                 int papeSize = GridView1.PageSize;
                 int pageIndex = GridView1.PageIndex;
@@ -89,8 +98,75 @@ namespace DtCms.Web.Admin.Activity
                     activity.UpdateOneRecordAuditStatus(activityId);
 
                 }
+                if (AuditStatus == "再次提交")
+                {
+                    DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
+
+                    activity.UpdateOneRecordAuditStatus(activityId);
+
+                }
                 else if (AuditStatus == "退回修改")
                 {
+
+                    DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
+
+                    activity.UpdateOneRecordAuditStatus(activityId);
+                    
+                }
+
+                GridView1.DataBind();
+            }
+            if (e.CommandName == "ButtonBack")
+            {
+                PanelBack.Visible = false;
+                int dataItemIndex = Convert.ToInt32(e.CommandArgument);
+                int papeSize = GridView1.PageSize;
+                int pageIndex = GridView1.PageIndex;
+                int rowIndex = dataItemIndex - papeSize * pageIndex;
+                string activityId = GridView1.Rows[rowIndex].Cells[0].Text;
+                string AuditStatus = ((Label)GridView1.Rows[rowIndex].FindControl("LabelAudit")).Text;
+                if (AuditStatus == "未审核")
+                {
+                    PanelBack.Visible = true;
+                    HiddenFieldBack.Value = activityId;
+
+                }
+
+                else if (AuditStatus == "再次提交")
+                {
+                    PanelBack.Visible = true;
+                    HiddenFieldBack.Value = activityId;
+
+                }
+                GridView1.DataBind();
+            }
+               
+            if (e.CommandName == "ButtonUncheck")
+            {
+                PanelBack.Visible = false;
+                int dataItemIndex = Convert.ToInt32(e.CommandArgument);
+                int papeSize = GridView1.PageSize;
+                int pageIndex = GridView1.PageIndex;
+                int rowIndex = dataItemIndex - papeSize * pageIndex;
+                string activityId = GridView1.Rows[rowIndex].Cells[0].Text;
+                string AuditStatus = ((Label)GridView1.Rows[rowIndex].FindControl("LabelAudit")).Text;
+                if (AuditStatus == "未审核")
+                {
+                    DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
+
+                    activity.UpdateOneRecordAuditStatusUncheck(activityId);
+
+                }
+                else if (AuditStatus == "再次提交")
+                {
+                    DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
+
+                    activity.UpdateOneRecordAuditStatusUncheck(activityId);
+
+                }
+                else if (AuditStatus == "退回修改")
+                {
+
                     DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
 
                     activity.UpdateOneRecordAuditStatus(activityId);
@@ -99,61 +175,9 @@ namespace DtCms.Web.Admin.Activity
 
                 GridView1.DataBind();
             }
-            if (e.CommandName == "ButtonBack")
-            {
-
-                int dataItemIndex = Convert.ToInt32(e.CommandArgument);
-                int papeSize = GridView1.PageSize;
-                int pageIndex = GridView1.PageIndex;
-                int rowIndex = dataItemIndex - papeSize * pageIndex;
-                string activityId = GridView1.Rows[rowIndex].Cells[0].Text;
-                string AuditStatus = ((Label)GridView1.Rows[rowIndex].FindControl("LabelAudit")).Text;
-                if (AuditStatus == "未审核")
-                {
-                    DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
-
-                    activity.UpdateOneRecordAuditStatusBack(activityId);
-
-                }
-                else if (AuditStatus == "退回修改")
-                {
-                    DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
-
-                    activity.UpdateOneRecordAuditStatusBack(activityId);
-
-                }
-                GridView1.DataBind();
-            }
-               
-            if (e.CommandName == "ButtonUncheck")
-            {
-
-                int dataItemIndex = Convert.ToInt32(e.CommandArgument);
-                int papeSize = GridView1.PageSize;
-                int pageIndex = GridView1.PageIndex;
-                int rowIndex = dataItemIndex - papeSize * pageIndex;
-                string activityId = GridView1.Rows[rowIndex].Cells[0].Text;
-                string AuditStatus = ((Label)GridView1.Rows[rowIndex].FindControl("LabelAudit")).Text;
-                if (AuditStatus == "未审核")
-                {
-                    DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
-
-                    activity.UpdateOneRecordAuditStatusUncheck(activityId);
-
-                }
-                else if (AuditStatus == "退回修改")
-                {
-                    DtCms.BLL.Activity activity = new DtCms.BLL.Activity();
-
-                    activity.UpdateOneRecordAuditStatusUncheck(activityId);
-
-                }
-
-                GridView1.DataBind();
-            }
             if (e.CommandName == "ButtonEdit")
             {
-               
+                PanelBack.Visible = false;
             int dataItemIndex = Convert.ToInt32(e.CommandArgument);
             int papeSize = GridView1.PageSize;
             int pageIndex = GridView1.PageIndex;
@@ -200,6 +224,27 @@ namespace DtCms.Web.Admin.Activity
         protected void ButtonReturn_Click(object sender, EventArgs e)
         {
             PanelEdit.Visible = false;
+        }
+
+        protected void ButtonBack_Click(object sender, EventArgs e)
+        {
+            string activityId = HiddenFieldBack.Value.ToString();
+            DtCms.Model.Activity activity = new DtCms.Model.Activity();
+            DtCms.BLL.Activity activityBLL = new DtCms.BLL.Activity();
+            activity.ActivityId = activityId;
+            activity.ASuggestion = TextBoxSuggestion.Text.Trim();
+           activity.CheckStatus = "退回修改";
+            if (activity.ATime == null || activity.ATime == DateTime.MinValue)
+            {
+                activity.ATime = new DateTime(1900, 1, 1);
+            }
+            activityBLL.UpdateOneRecordAuditStatusBack(activityId);
+            activityBLL.UpdateFieldSu(activityId,TextBoxSuggestion.Text.Trim());
+            Response.Write("<script>alert('提交成功。')</script>");
+        }
+     protected void ButtonBackCancel_Click(object sender, EventArgs e)
+        {
+            PanelBack.Visible = false;
         }
 
 

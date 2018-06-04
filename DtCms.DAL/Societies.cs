@@ -60,7 +60,7 @@ namespace DtCms.DAL
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
 					new SqlParameter("@SocietiesName", SqlDbType.NVarChar,20),
-                    new SqlParameter("@SocietiesRemark", SqlDbType.NVarChar,20),
+                    new SqlParameter("@SocietiesRemark", SqlDbType.NVarChar,1000),
 					new SqlParameter("@AddTime", SqlDbType.DateTime)};
             parameters[0].Value = model.SocietiesName;
             parameters[1].Value = model.SocietiesRemark;
@@ -101,7 +101,7 @@ namespace DtCms.DAL
             SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4),
 					new SqlParameter("@SocietiesName", SqlDbType.NVarChar,20),
-                    new SqlParameter("@SocietiesRemark", SqlDbType.NVarChar,20)};
+                    new SqlParameter("@SocietiesRemark", SqlDbType.NVarChar,1000)};
             parameters[0].Value = model.Id;
             parameters[1].Value = model.SocietiesName;
             parameters[2].Value = model.SocietiesRemark;

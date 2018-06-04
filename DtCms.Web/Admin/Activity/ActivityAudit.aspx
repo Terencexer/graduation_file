@@ -40,6 +40,18 @@
             font-size: xx-large;
             height: 35px;
         }
+        .style3
+        {
+            width: 100%;
+        }
+        .style4
+        {
+            width: 377px;
+        }
+        .style5
+        {
+            width: 216px;
+        }
     </style>
 </head>
 <body style="padding:10px;">
@@ -55,6 +67,14 @@
         </tr>
         <tr>
             <td align="center">
+                审核状态：<asp:DropDownList 
+                    ID="DropDownListMode" runat="server" AutoPostBack="True">
+                    <asp:ListItem>审核通过</asp:ListItem>
+                    <asp:ListItem>退回修改</asp:ListItem>
+                    <asp:ListItem>再次提交</asp:ListItem>
+                    <asp:ListItem>不批准</asp:ListItem>
+                    <asp:ListItem>未审核</asp:ListItem>
+                </asp:DropDownList>
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
                     AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
                     BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
@@ -142,7 +162,12 @@
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:DtCmsdbConnectionAudit %>" 
-                    SelectCommand="SELECT [ActivityId], [Title], [Applicant], [Budget], [AConten], [ATime], [Place], [CheckStatus] FROM [dt_TacvitityApply]">
+                    
+                    SelectCommand="SELECT [ActivityId], [Title], [Applicant], [Budget], [AConten], [ATime], [Place], [CheckStatus] FROM [dt_TacvitityApply] WHERE ([CheckStatus] = @CheckStatus)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="DropDownListMode" Name="CheckStatus" 
+                            PropertyName="SelectedValue" Type="String" />
+                    </SelectParameters>
                 </asp:SqlDataSource>
                 
                 <asp:HiddenField ID="HiddenFieldEdit" runat="server" />
@@ -240,6 +265,32 @@
 			</div>
  
                 </asp:Panel>
+    <asp:Panel ID="PanelBack" runat="server">
+        <table class="style3" style="border: thin solid #000000" width="700px">
+            <tr>
+                <td align="center" colspan="2" 
+                    
+                    style="border: thin solid #000000; font-size: xx-large; font-family: 黑体; text-align: center" 
+                    width="600px">
+                    退回提供修改建议</td>
+            </tr>
+            <tr>
+                <td class="style5" style="border: thin solid #000000" width="600px">
+                    修改意见：</td>
+                <td width="600px">
+                    <asp:TextBox ID="TextBoxSuggestion" runat="server" Height="131px" 
+                        maxlength="3000" Width="593px"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
+        <div>
+        <asp:Button ID="ButtonBack" runat="server" Text="确定" onclick="ButtonBack_Click" 
+                        /> &nbsp; &nbsp;
+                    <asp:Button ID="ButtonBackCancel" runat="server" Text="返回" Height="23px" 
+                        Width="81px" onclick="ButtonBackCancel_Click" />
+            <asp:HiddenField ID="HiddenFieldBack" runat="server" />
+        </div>
+    </asp:Panel>
     </form>
 </body>
 </html>

@@ -102,3 +102,16 @@ E:\graduation_file8\graduation_file\DtCms.BLL\bin\Debug\DtCms.DBUtility.pdb
 E:\graduation_file8\graduation_file\DtCms.BLL\obj\Debug\ResolveAssemblyReference.cache
 E:\graduation_file8\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.dll
 E:\graduation_file8\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.pdb
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.BLL.dll
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.BLL.pdb
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.Common.dll
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.DAL.dll
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.Model.dll
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.DBUtility.dll
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.Common.pdb
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.DAL.pdb
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.Model.pdb
+D:\graduation_file\DtCms.BLL\bin\Debug\DtCms.DBUtility.pdb
+D:\graduation_file\DtCms.BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.dll
+D:\graduation_file\DtCms.BLL\obj\Debug\DtCms.BLL.pdb

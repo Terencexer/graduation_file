@@ -113,5 +113,9 @@ namespace DtCms.BLL
         {
             return dal.GetPageList(pageSize, currentPage, strWhere, filedOrder);
         }
+        public DtCms.Model.Member QueryOneRecord(string UserName)
+        {
+            return dal.QueryOneRecord(UserName);
+        }
     }
 }
